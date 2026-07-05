@@ -42,6 +42,7 @@ if awk '/^```mermaid$/{inside=1; next} /^```$/{inside=0} inside && /== .* ==>/ {
 fi
 
 python3 - <<'PY'
+import json
 import re
 import sqlite3
 import subprocess
@@ -125,6 +126,61 @@ for path in paths:
 if violations:
     print('CJK text/path remains:')
     for item in violations[:200]:
+        print(item)
+    sys.exit(1)
+
+servarr_failures = []
+
+def note(ok, message):
+    if not ok:
+        servarr_failures.append(message)
+
+def language_spec_values(con):
+    values = []
+    for row_id, name, specs in con.execute('select Id, Name, Specifications from CustomFormats'):
+        try:
+            data = json.loads(specs)
+        except Exception as exc:
+            servarr_failures.append(f'CustomFormats:{row_id} invalid JSON: {exc}')
+            continue
+        for spec in data:
+            body = spec.get('body', {})
+            if spec.get('type') == 'LanguageSpecification' or body.get('implementationName') == 'Language':
+                values.append((row_id, name, body.get('name'), body.get('value')))
+    return values
+
+radarr = sqlite3.connect('file:config/radarr/radarr.db?mode=ro', uri=True, timeout=2)
+radarr_config = dict(radarr.execute("select Key, Value from Config where Key in ('uilanguage', 'movieinfolanguage')"))
+for key in ('uilanguage', 'movieinfolanguage'):
+    note(radarr_config.get(key) == '1', f'radarr Config.{key} must be English language id 1')
+radarr_bad_profiles = radarr.execute('select Id, Name, Language from QualityProfiles where Language != 1').fetchall()
+note(not radarr_bad_profiles, f'radarr QualityProfiles must use English language id 1: {radarr_bad_profiles}')
+radarr_lang_specs = language_spec_values(radarr)
+note(bool(radarr_lang_specs), 'radarr must keep an English LanguageSpecification custom format')
+note(all(row_name == 'English' and spec_name == 'English' and value == 1 for _, row_name, spec_name, value in radarr_lang_specs),
+     f'radarr LanguageSpecification custom formats must be English id 1: {radarr_lang_specs}')
+radarr.close()
+
+sonarr = sqlite3.connect('file:config/sonarr/sonarr.db?mode=ro', uri=True, timeout=2)
+sonarr_config = dict(sonarr.execute("select Key, Value from Config where Key = 'uilanguage'"))
+note(sonarr_config.get('uilanguage') == '1', 'sonarr Config.uilanguage must be English language id 1')
+sonarr_lang_specs = language_spec_values(sonarr)
+note(bool(sonarr_lang_specs), 'sonarr must keep an English LanguageSpecification custom format')
+note(all(row_name == 'English' and spec_name == 'English' and value == 1 for _, row_name, spec_name, value in sonarr_lang_specs),
+     f'sonarr LanguageSpecification custom formats must be English id 1: {sonarr_lang_specs}')
+for row_id, ignored in sonarr.execute('select Id, Ignored from ReleaseProfiles'):
+    try:
+        ignored_terms = json.loads(ignored or '[]')
+    except Exception as exc:
+        servarr_failures.append(f'sonarr ReleaseProfiles:{row_id} invalid Ignored JSON: {exc}')
+        continue
+    blocked = {'English', 'EnglishEmbedded'} & set(ignored_terms)
+    note(not blocked, f'sonarr ReleaseProfiles:{row_id} must not ignore English releases: {sorted(blocked)}')
+sonarr.close()
+
+if servarr_failures:
+    print('Radarr/Sonarr English defaults failed:')
+    for item in servarr_failures:
         print(item)
     sys.exit(1)
 PY
