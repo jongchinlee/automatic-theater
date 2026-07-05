@@ -89,6 +89,11 @@ for path in paths:
     if suffix in {'.db', '.sqlite', '.sqlite3'}:
         try:
             con = sqlite3.connect(f'file:{path}?mode=ro', uri=True, timeout=2)
+            quick_check = con.execute('pragma quick_check').fetchone()[0]
+            if quick_check != 'ok':
+                violations.append(f'{path}:sqlite quick_check failed: {quick_check}')
+                con.close()
+                continue
             for (table,) in con.execute("select name from sqlite_master where type='table'"):
                 try:
                     cols = [r[1] for r in con.execute(f'pragma table_info("{table}")')]
