@@ -23,6 +23,8 @@ reject '^  portainer:' "$compose"
 [ ! -e config/portainer ]
 reject 'Portainer' README.md config/heimdall/www/app.sqlite config/heimdall/www/SupportedApps config/heimdall/www/icons 2>/dev/null
 reject 'Jellyseerr\|jellyseerr\|fallenbagel/jellyseerr' README.md docker-compose-default.yml config/heimdall/www/app.sqlite 2>/dev/null
+grep -F -q 'WebUI\HTTPS\Enabled=false' config/qbittorrent/qBittorrent/qBittorrent.conf
+grep -F -q 'WebUI\SecureCookie=false' config/qbittorrent/qBittorrent/qBittorrent.conf
 
 grep -q '^  seerr:' "$compose"
 grep -q 'image: seerr/seerr:latest' "$compose"
