@@ -7,7 +7,13 @@
 # 本脚本用于安装 automatic-theater
 #
 
-set -e
+set -euo pipefail
+
+cd "$(dirname "$0")"
+SUDO=sudo
+if [[ ${EUID:-$(id -u)} -eq 0 ]]; then
+	SUDO=
+fi
 
 echo "|------------------------------------------------------|"
 echo "|                                                      |"
@@ -22,83 +28,64 @@ echo "|------------------------------------------------------|"
 cat ./docker-compose-default.env
 echo "|------------------------------------------------------|"
 echo ""
-echo "确认信息，并继续执行？（是：y，否：n）："
-read CONFIRM
-YES=y
-if [[ "${CONFIRM}" == "${YES}" ]]; then
-	echo ""
-else
+read -r -p "确认信息，并继续执行？（是：y，否：n）：" CONFIRM
+if [[ "${CONFIRM}" != "y" ]]; then
 	echo "取消并退出"
-	exit
+	exit 0
 fi
 
-echo ""
-echo "开始创建目录 ......"
+set -a
 . ./docker-compose-default.env
-if [[ ! -d ${MEDIA_PATH} ]]; then
-	sudo mkdir -p ${MEDIA_PATH}
-	echo "✅  创建目录成功：${MEDIA_PATH}"
-fi
-if [[ ! -d ${MEDIA_PATH}/movie ]]; then
-	sudo mkdir ${MEDIA_PATH}/movie
-	echo "✅  创建目录成功：${MEDIA_PATH}/movie"
-fi
-if [[ ! -d ${MEDIA_PATH}/serial ]]; then
-	sudo mkdir ${MEDIA_PATH}/serial
-	echo "✅  创建目录成功：${MEDIA_PATH}/serial"
-fi
-if [[ ! -d ${MEDIA_PATH}/anime ]]; then
-	sudo mkdir ${MEDIA_PATH}/anime
-	echo "✅  创建目录成功：${MEDIA_PATH}/anime"
-fi
-if [[ ! -d ${MEDIA_PATH}/download ]]; then
-	sudo mkdir ${MEDIA_PATH}/download
-	echo "✅  创建目录成功：${MEDIA_PATH}/download"
-fi
-echo "✅  创建目录成功"
+set +a
 
 echo ""
-echo "修改目录权限 ......"
-sudo chown -R ${USERNAME}:${GROUPNAME} ${MEDIA_PATH}
-sudo chmod -R 770 ${MEDIA_PATH}
+echo "开始创建媒体目录 ......"
+for dir in \
+	"${MEDIA_PATH}" \
+	"${MEDIA_PATH}/movie" \
+	"${MEDIA_PATH}/serial" \
+	"${MEDIA_PATH}/anime" \
+	"${MEDIA_PATH}/download"
+do
+	${SUDO} mkdir -p "${dir}"
+	echo "✅  目录就绪：${dir}"
+done
+
+echo ""
+echo "修改媒体目录权限 ......"
+${SUDO} chown -R "${USERNAME}:${GROUPNAME}" "${MEDIA_PATH}"
+${SUDO} chmod -R 770 "${MEDIA_PATH}"
 echo "✅  修改媒体目录权限成功"
 
-echo "|"
-echo "|------------------------------------------------------|"
-echo "|                     当前目录结构                     |"
-echo "|------------------------------------------------------|"
-ls -l ${MEDIA_PATH}
-echo "|------------------------------------------------------|"
-
 echo ""
-echo "生成环境变量 ......"
-sudo cp ./docker-compose-default.env ./.env
-echo "✅  生成环境变量成功"
-
-echo ""
-echo "修改目录权限 ......"
-sudo chown -R ${USERNAME}:${GROUPNAME} ../automatic-theater
-sudo chmod -R 770 ../automatic-theater
-echo "✅  修改 automatic-theater 目录权限成功"
+echo "生成部署文件 ......"
+cp ./docker-compose-default.env ./.env
+cp ./docker-compose-default.yml ./docker-compose.yml
 
 echo ""
 echo "添加显卡配置 ......"
-sudo cp ./docker-compose-default.yml ./docker-compose.yml
-sudo chown -R ${USERNAME}:${GROUPNAME} ./docker-compose.yml
-sudo chmod -R 770 ./docker-compose.yml
-DEVICE=""
+GPU_DEVICES=()
 if [[ -d "/dev/dri" ]]; then
-	DEVICE="/dev/dri:/dev/dri"
+	GPU_DEVICES+=("/dev/dri:/dev/dri")
 fi
 if [[ -d "/dev/vchiq" ]]; then
-	DEVICE="/dev/vchiq:/dev/vchiq"
+	GPU_DEVICES+=("/dev/vchiq:/dev/vchiq")
 fi
-if [[ ${DEVICE} ]]; then
-	sudo echo "    devices:" >> ./docker-compose.yml
-	sudo echo "      - ${DEVICE}" >> ./docker-compose.yml
+if (( ${#GPU_DEVICES[@]} )); then
+	{
+		echo "    devices:"
+		for device in "${GPU_DEVICES[@]}"; do
+			echo "      - ${device}"
+		done
+	} >> ./docker-compose.yml
 	echo "✅  添加硬件加速设备成功"
 else
-	echo "✖️  未检测到 /dev/dri 或 /dev/vchiq，无法为 Emby 添加硬件加速设备"
+	echo "✖️  未检测到 /dev/dri 或 /dev/vchiq，跳过硬件加速设备"
 fi
 
+${SUDO} chown "${USERNAME}:${GROUPNAME}" ./.env ./docker-compose.yml
+chmod 660 ./.env ./docker-compose.yml
+
+echo ""
 echo "✅  程序执行完毕 ✅"
+echo "下一步：docker compose pull && docker compose up -d"

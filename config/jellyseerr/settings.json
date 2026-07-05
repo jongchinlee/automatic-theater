@@ -32,7 +32,7 @@
  },
  "jellyfin": {
   "name": "",
-  "hostname": "http://172.128.2.20:8096",
+  "hostname": "http://172.30.12.20:8096",
   "externalHostname": "",
   "libraries": [
    {
@@ -60,7 +60,7 @@
  "radarr": [
   {
    "name": "Radarr",
-   "hostname": "172.128.2.17",
+   "hostname": "172.30.12.17",
    "port": 7878,
    "apiKey": "ca7d9fcbaae64526b24adf580e32fe41",
    "useSsl": false,
@@ -83,7 +83,7 @@
  "sonarr": [
   {
    "name": "Sonarr",
-   "hostname": "172.128.2.18",
+   "hostname": "172.30.12.18",
    "port": 8989,
    "apiKey": "43cc956985c343998f815949250c2a34",
    "useSsl": false,

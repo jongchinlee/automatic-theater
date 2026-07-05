@@ -4,7 +4,7 @@ networks:
     driver: bridge
     ipam:
       config:
-      - subnet: 172.128.2.0/24
+      - subnet: 172.30.12.0/24
 
 services:
   heimdall:
@@ -21,22 +21,7 @@ services:
       - 60211:443
     networks:
       network:
-        ipv4_address: 172.128.2.11
-
-  portainer:
-    image: 6053537/portainer-ce:latest
-    container_name: portainer
-    restart: unless-stopped
-    environment:
-      - TZ=Asia/Shanghai
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ${CONFIG_PATH}/portainer:/data
-    ports:
-      - 60212:9000
-    networks:
-      network:
-        ipv4_address: 172.128.2.12
+        ipv4_address: 172.30.12.11
 
   flaresolverr:
     image: flaresolverr/flaresolverr:latest
@@ -53,10 +38,10 @@ services:
       - 60213:8191
     networks:
       network:
-        ipv4_address: 172.128.2.13
+        ipv4_address: 172.30.12.13
 
   prowlarr:
-    image: linuxserver/prowlarr:develop
+    image: linuxserver/prowlarr:latest
     container_name: prowlarr
     restart: unless-stopped
     environment:
@@ -69,7 +54,7 @@ services:
       - 60223:9696
     networks:
       network:
-        ipv4_address: 172.128.2.23
+        ipv4_address: 172.30.12.23
 
   jproxy:
     image: luckypuppy514/jproxy:latest
@@ -86,10 +71,10 @@ services:
       - 60215:8117
     networks:
       network:
-        ipv4_address: 172.128.2.15
+        ipv4_address: 172.30.12.15
 
   jellyseerr:
-    image: fallenbagel/jellyseerr:develop
+    image: fallenbagel/jellyseerr:latest
     container_name: jellyseerr
     restart: unless-stopped
     environment:
@@ -104,7 +89,7 @@ services:
       - 60216:5055
     networks:
       network:
-        ipv4_address: 172.128.2.16
+        ipv4_address: 172.30.12.16
     depends_on:
       - sonarr
       - radarr
@@ -124,13 +109,13 @@ services:
       - 60217:7878
     networks:
       network:
-        ipv4_address: 172.128.2.17
+        ipv4_address: 172.30.12.17
     depends_on:
       - jproxy
       - qbittorrent
 
   sonarr:
-    image: linuxserver/sonarr:develop
+    image: linuxserver/sonarr:latest
     container_name: sonarr
     restart: unless-stopped
     environment:
@@ -144,7 +129,7 @@ services:
       - 60218:8989
     networks:
       network:
-        ipv4_address: 172.128.2.18
+        ipv4_address: 172.30.12.18
     depends_on:
       - jproxy
       - qbittorrent
@@ -167,10 +152,10 @@ services:
       - 60881:6881/udp
     networks:
       network:
-        ipv4_address: 172.128.2.19
+        ipv4_address: 172.30.12.19
 
   chinesesubfinder:
-    image: allanpk716/chinesesubfinder:latest-lite
+    image: allanpk716/chinesesubfinder:latest
     container_name: chinesesubfinder
     restart: unless-stopped
     volumes:
@@ -192,7 +177,7 @@ services:
           max-size: "100m"
     networks:
       network:
-        ipv4_address: 172.128.2.21
+        ipv4_address: 172.30.12.21
 
   emby:
     image: emby/embyserver:latest
@@ -210,4 +195,4 @@ services:
       - 60220:8096
     networks:
       network:
-        ipv4_address: 172.128.2.20
+        ipv4_address: 172.30.12.20

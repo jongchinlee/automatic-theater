@@ -43,7 +43,6 @@ graph LR
 | 系统 | 功能 | 汉化 | 说明 |
 | :---: | :---: | :---: | :---: |
 | [Heimdall](https://github.com/linuxserver/Heimdall) | 程序仪表盘  | ⭕ | 导航页，自定义了 CSS 和 JS，开箱即用 |
-| [Portainer](https://github.com/portainer/portainer) | 容器管理系统 | ⭕ | 方便启动或关闭容器，查看日志等 |
 | [Emby](https://emby.media) | 媒体服务器 | ⭕ | 刮削信息，提供观看服务 |
 | [Jellyseerr](https://github.com/Fallenbagel/jellyseerr) | 聚合搜索 | ⭕ | 搜索并推送到 Sonarr / Radarr |
 | [Radarr](https://github.com/Radarr/Radarr) | 电影订阅系统 | ⭕ | 定时搜索，下载，重命名并导入 |
@@ -56,9 +55,6 @@ graph LR
 
 Heimdall
 ![20230414183719](https://github.com/LuckyPuppy514/image/raw/main/2023/2023-04-14/20230414183719.webp)
-
-Portainer
-![Portainer_tuya](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/Portainer_tuya.jpg)
 
 Emby
 ![Emby_tuya](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/Emby_tuya.jpg)
@@ -126,6 +122,8 @@ curl https://www.youtube.com
 - 😰 无法访问 TMDB, TVDB
 - 😭 索引器经常无法使用
 
+Docker 内部网络默认使用私有网段 `172.30.12.0/24`，如果和现有网络冲突，修改 `docker-compose-default.yml` 后重新执行安装脚本。
+
 ## 👨‍💻 安装
 
 安装会用到以下命令，请先自行安装，这里仅提供 ubuntu / debian 的安装方式
@@ -171,13 +169,13 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v2.11.2/docker
 #### 2.1. 下载项目
 
 ```bash
-sudo git clone https://github.com/LuckyPuppy514/automatic-theater.git
+sudo git clone https://github.com/jongchinlee/automatic-theater.git
 ```
 
 如果提示找不到 git 命令
 
 - 方法一：自行查找自己系统安装 git 的方式
-- 方法二：[👆 点我下载 👆](https://github.com/LuckyPuppy514/automatic-theater/archive/refs/heads/main.zip) 解压后上传对应目录（记得修改目录名称为 `automatic-theater`）
+- 方法二：[👆 点我下载 👆](https://github.com/jongchinlee/automatic-theater/archive/refs/heads/main.zip) 解压后上传对应目录（记得修改目录名称为 `automatic-theater`）
 
 #### 2.1. 修改配置文件
 
@@ -200,7 +198,7 @@ sudo vi docker-compose-default.env
 在 automatic-theater 目录下执行
 
 ```bash
-sudo chmod -R 777 * && sudo ./install.sh
+chmod +x install.sh && ./install.sh
 ```
 
 ![20230116141824](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/20230116141824.png)
@@ -229,18 +227,17 @@ sudo docker-compose up -d
 sudo docker-compose down
 ```
 
-> 后续启动和关闭等操作可以在 Portainer 中执行
+> 后续启动和关闭等操作继续使用 docker compose / docker-compose 命令执行
 > 修改参数建议还是修改 docker-compose.yml 和 .env
 
 ## 📺 使用
 
 ```mermaid
 graph LR
-    1[Heimdall] == 1. 查看所有容器状态 ==> 2[Portainer]
-    1[Heimdall] == 2. 搜索和请求电影/电视剧/动漫 ==> 3[Jellyseerr]
-    1[Heimdall] == 3. 查看搜索结果 ==> 4[Sonarr / Radarr]
-    1[Heimdall] == 4. 查看下载进度 ==> 5[qBittorrentee]
-    1[Heimdall] == 5. 观看 ==> 6[Emby]
+    1[Heimdall] == 1. 搜索和请求电影/电视剧/动漫 ==> 3[Jellyseerr]
+    1[Heimdall] == 2. 查看搜索结果 ==> 4[Sonarr / Radarr]
+    1[Heimdall] == 3. 查看下载进度 ==> 5[qBittorrentee]
+    1[Heimdall] == 4. 观看 ==> 6[Emby]
 ```
 
 [🌟 【Emby客户端】多平台免费优化版 🌟](https://kutt.lckp.top/jOPDvh)
@@ -248,7 +245,6 @@ graph LR
 | 名称 | 地址 | 用户名 | 密码 |
 | :---: | :---: | :---: | :---: |
 | Heimdall | `https://ip:60211`  | - | - |
-| Portainer | `http://ip:60212` | atm | atm@20230101 |
 | FlareSolverr | `http://ip:60213` | - | - |
 | Prowlarr | `http://ip:60223` | atm | atm@20230101 |
 | JProxy | `http://ip:60215` | atm | atm@20230101 |
