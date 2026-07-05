@@ -58,30 +58,6 @@ graph LR
 | [ChineseSubFinder](https://github.com/ChineseSubFinder/ChineseSubFinder) | 字幕下载 | ⭕ | 自动下载电影和电视剧字幕 |
 | [Recyclarr](https://github.com/recyclarr/recyclarr) | 质量规则同步 | - | 同步 Sonarr / Radarr 质量配置 |
 
-Heimdall
-![20230414183719](https://github.com/LuckyPuppy514/image/raw/main/2023/2023-04-14/20230414183719.webp)
-
-Emby
-![Emby_tuya](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/Emby_tuya.jpg)
-
-Radarr
-![Radarr_tuya](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/Radarr_tuya.jpg)
-
-Sonarr
-![Sonarr_tuya](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/Sonarr_tuya.jpg)
-
-Prowlarr
-![Prowlarr_tuya](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/Prowlarr_tuya.jpg)
-
-JProxy
-![20230414184607](https://github.com/LuckyPuppy514/image/raw/main/2023/2023-04-14/20230414184607.webp)
-
-qBittorrent
-![qBittorrentee_tuya](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/qBittorrentee_tuya.jpg)
-
-ChineseSubFinder
-![20230414184249](https://github.com/LuckyPuppy514/image/raw/main/2023/2023-04-14/20230414184249.webp)
-
 ## 🔥 配置
 
 ### 💻 1. 硬件
