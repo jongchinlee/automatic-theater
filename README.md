@@ -208,7 +208,7 @@ chmod +x install.sh && ./install.sh
 #### 2.4. 拉取镜像
 
 ```bash
-sudo docker-compose pull
+sudo docker compose pull
 ```
 
 > 因为镜像较多，拉取较慢，某个失败或卡着，ctrl+c 强制停止，再次执行即可，多试几次
@@ -220,13 +220,13 @@ sudo docker-compose pull
 启动
 
 ```bash
-sudo docker-compose up -d
+sudo docker compose up -d
 ```
 
 关闭
 
 ```bash
-sudo docker-compose down
+sudo docker compose down
 ```
 
 > 后续启动和关闭等操作继续使用 docker compose / docker-compose 命令执行

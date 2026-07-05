@@ -88,4 +88,9 @@ chmod 660 ./.env ./docker-compose.yml
 
 echo ""
 echo "✅  程序执行完毕 ✅"
-echo "下一步：docker compose pull && docker compose up -d"
+if docker info >/dev/null 2>&1; then
+	DOCKER_RUN="docker compose"
+else
+	DOCKER_RUN="sudo docker compose"
+fi
+echo "下一步：${DOCKER_RUN} pull && ${DOCKER_RUN} up -d"

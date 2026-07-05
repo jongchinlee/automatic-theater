@@ -3,14 +3,26 @@ set -euo pipefail
 
 compose=docker-compose-default.yml
 
+reject() {
+  local pattern=$1
+  shift
+  if grep -R -I -q "$pattern" "$@"; then
+    printf 'rejected pattern: %s\n' "$pattern"
+    exit 1
+  fi
+}
+
+reject '^version:' "$compose"
 grep -q 'subnet: 172.30.12.0/24' "$compose"
-! grep -R -I -q '172\.128\.2\.' . --exclude-dir=.git --exclude=.env
-! grep -R -I -q '192\.168\.2\.' . --exclude-dir=.git --exclude=.env
-! grep -R -I -q 'Asia/Shanghai' README.md docker-compose-default.env docker-compose-default.yml install.sh check.sh
-! grep -q '^  portainer:' "$compose"
+reject '172\.128\.2\.' . --exclude-dir=.git --exclude=.env
+reject '192\.168\.2\.' . --exclude-dir=.git --exclude=.env
+reject 'Asia/Shanghai' README.md docker-compose-default.env docker-compose-default.yml install.sh
+reject '下一步：docker compose pull' install.sh
+reject 'sudo docker-compose pull\|sudo docker-compose up\|sudo docker-compose down' README.md
+reject '^  portainer:' "$compose"
 [ ! -e config/portainer ]
-! grep -R -I -q 'Portainer' README.md config/heimdall/www/app.sqlite config/heimdall/www/SupportedApps config/heimdall/www/icons 2>/dev/null
-! grep -R -I -q 'Jellyseerr\|jellyseerr\|fallenbagel/jellyseerr' README.md docker-compose-default.yml config/heimdall/www/app.sqlite 2>/dev/null
+reject 'Portainer' README.md config/heimdall/www/app.sqlite config/heimdall/www/SupportedApps config/heimdall/www/icons 2>/dev/null
+reject 'Jellyseerr\|jellyseerr\|fallenbagel/jellyseerr' README.md docker-compose-default.yml config/heimdall/www/app.sqlite 2>/dev/null
 
 grep -q '^  seerr:' "$compose"
 grep -q 'image: seerr/seerr:latest' "$compose"
