@@ -1,8 +1,8 @@
 ---
 id: u2
 name: U2
-description: "U2 (U2分享園@動漫花園) is a CHINESE Private Torrent Tracker for ANIME"
-language: zh-CN
+description: "U2 (U2English@English) is a CHINESE Private Torrent Tracker for ANIME"
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -19,11 +19,11 @@ caps:
     - {id: 15, cat: TV/Anime, desc: "DVDISO"}
     - {id: 16, cat: TV/Anime, desc: "BDMV"}
     - {id: 17, cat: TV/Anime, desc: "LQRip"}
-    - {id: 410, cat: TV/Anime, desc: "外挂结构 (TV Series)"}
-    - {id: 412, cat: TV/Anime, desc: "加流重灌 (Modded Blu-rays)"}
+    - {id: 410, cat: TV/Anime, desc: "ExternalEnglish (TV Series)"}
+    - {id: 412, cat: TV/Anime, desc: "English (Modded Blu-rays)"}
     - {id: 21, cat: Books, desc: "Raw Books"}
-    - {id: 22, cat: Books, desc: "港译漫画 (HK Books)"}
-    - {id: 23, cat: Books, desc: "台译漫画 (TW Books)"}
+    - {id: 22, cat: Books, desc: "EnglishManga (HK Books)"}
+    - {id: 23, cat: Books, desc: "EnglishManga (TW Books)"}
     - {id: 30, cat: Audio, desc: "Lossless Music"}
     - {id: 40, cat: Other, desc: "Others"}
     # Anime as Movies (Radarr uses t=movie):
@@ -36,7 +36,7 @@ caps:
     - {id: 15, cat: Movies/Other, desc: "DVDISO"}
     - {id: 16, cat: Movies/BluRay, desc: "BDMV"}
     - {id: 17, cat: Movies/Other, desc: "LQRip"}
-    - {id: 412, cat: Movies/BluRay, desc: "加流重灌 (Modded Blu-rays)"}
+    - {id: 412, cat: Movies/BluRay, desc: "English (Modded Blu-rays)"}
 
   modes:
     search: [q]

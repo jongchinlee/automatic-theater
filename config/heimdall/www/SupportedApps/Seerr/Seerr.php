@@ -40,7 +40,7 @@ class Seerr extends \App\SupportedApps implements \App\EnhancedApps {
 			parent::execute($this->url("issue/count"), $this->attrs)->getBody()
 		);
 
-        if ($pendingRequestsCount || $pendingIssueCount) 
+        if ($pendingRequestsCount || $pendingIssueCount)
         {
 			$data["requests"] = $pendingRequestsCount->pending ?? 0;
 			$data["issues"] = $pendingIssueCount->open ?? 0;

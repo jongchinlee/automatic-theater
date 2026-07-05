@@ -2,7 +2,7 @@
 id: btschool
 name: BTSCHOOL
 description: "BTSCHOOL is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,17 +10,17 @@ links:
 
 caps:
   categorymappings:
-    - {id: 405, cat: Movies, desc: "电影/Movies"}
-    - {id: 406, cat: TV, desc: "连续剧/TV-Series"}
-    - {id: 407, cat: TV/Anime, desc: "动漫/Animation"}
-    - {id: 408, cat: TV/Documentary, desc: "纪录片/Documentary"}
-    - {id: 412, cat: TV, desc: "综艺/TV-Show"}
-    - {id: 404, cat: PC/0day, desc: "软件/Software"}
-    - {id: 402, cat: TV, desc: "资料/Education"}
-    - {id: 411, cat: PC/Games, desc: "游戏/Game"}
-    - {id: 409, cat: Audio, desc: "音乐/Music"}
-    - {id: 410, cat: TV/Sport, desc: "体育/Sports"}
-    - {id: 415, cat: Other, desc: "其他/Other"}
+    - {id: 405, cat: Movies, desc: "Movies/Movies"}
+    - {id: 406, cat: TV, desc: "TV Series/TV-Series"}
+    - {id: 407, cat: TV/Anime, desc: "Anime/Animation"}
+    - {id: 408, cat: TV/Documentary, desc: "Documentary/Documentary"}
+    - {id: 412, cat: TV, desc: "TV Shows/TV-Show"}
+    - {id: 404, cat: PC/0day, desc: "Software/Software"}
+    - {id: 402, cat: TV, desc: "English/Education"}
+    - {id: 411, cat: PC/Games, desc: "Games/Game"}
+    - {id: 409, cat: Audio, desc: "Music/Music"}
+    - {id: 410, cat: TV/Sport, desc: "Sports/Sports"}
+    - {id: 415, cat: Other, desc: "Other/Other"}
 
   modes:
     search: [q]
@@ -60,8 +60,8 @@ login:
     username: "{{ .Config.username }}"
     password: "{{ .Config.password }}"
   error:
-    - selector: td.embedded:has(h2:contains("登錄失敗"))
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("English"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

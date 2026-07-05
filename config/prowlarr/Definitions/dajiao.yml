@@ -1,8 +1,8 @@
 ---
 id: dajiao
 name: Dajiao
-description: "Dajiao (打胶) is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
-language: zh-CN
+description: "Dajiao  is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,17 +10,17 @@ links:
 
 caps:
   categorymappings:
-    - {id: 414, cat: Console, desc: "Games/游戏"}
-    - {id: 412, cat: Audio/Audiobook, desc: "Audio Books/有声书"}
-    - {id: 409, cat: Other, desc: "Others/音乐"}
-    - {id: 411, cat: Books/Comics, desc: "Manga/漫画"}
-    - {id: 413, cat: Books/EBook, desc: "E-Books/电子书"}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries/纪录片"}
-    - {id: 403, cat: TV, desc: "TV Variety Shows/综艺"}
-    - {id: 405, cat: TV/Anime, desc: "Animations/动漫"}
-    - {id: 402, cat: TV, desc: "TV Series/电视剧"}
-    - {id: 401, cat: Movies, desc: "Movies/电影"}
-    - {id: 416, cat: TV, desc: "TV Shows/电视节目"}
+    - {id: 414, cat: Console, desc: "Games/Games"}
+    - {id: 412, cat: Audio/Audiobook, desc: "Audio Books/Audiobooks"}
+    - {id: 409, cat: Other, desc: "Others/Music"}
+    - {id: 411, cat: Books/Comics, desc: "Manga/Manga"}
+    - {id: 413, cat: Books/EBook, desc: "E-Books/E-Books"}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries/Documentary"}
+    - {id: 403, cat: TV, desc: "TV Variety Shows/TV Shows"}
+    - {id: 405, cat: TV/Anime, desc: "Animations/Anime"}
+    - {id: 402, cat: TV, desc: "TV Series/TV Series"}
+    - {id: 401, cat: Movies, desc: "Movies/Movies"}
+    - {id: 416, cat: TV, desc: "TV Shows/TV Shows"}
 
   modes:
     search: [q]
@@ -86,7 +86,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

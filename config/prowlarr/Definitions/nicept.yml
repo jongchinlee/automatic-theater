@@ -2,7 +2,7 @@
 id: nicept
 name: NicePT
 description: "NicePT is a CHINESE Private Torrent Tracker for 3X"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,14 +10,14 @@ links:
 
 caps:
   categorymappings:
-    - {id: 500, cat: XXX, desc: "日本有码"}
-    - {id: 401, cat: XXX, desc: "日本无码"}
-    - {id: 402, cat: XXX, desc: "欧美"}
-    - {id: 501, cat: XXX, desc: "其他（限制级）"}
-    - {id: 403, cat: XXX/Other, desc: "动漫（限制级）"}
-    - {id: 503, cat: XXX, desc: "真人秀，自拍（限制级）"}
-    - {id: 404, cat: XXX/ImageSet, desc: "写真、套图"}
-    - {id: 504, cat: XXX, desc: "SM调教（限制级）"}
+    - {id: 500, cat: XXX, desc: "JapanEnglish"}
+    - {id: 401, cat: XXX, desc: "JapanEnglish"}
+    - {id: 402, cat: XXX, desc: "Western"}
+    - {id: 501, cat: XXX, desc: "Other（English）"}
+    - {id: 403, cat: XXX/Other, desc: "Anime（English）"}
+    - {id: 503, cat: XXX, desc: "English，English（English）"}
+    - {id: 404, cat: XXX/ImageSet, desc: "Photo Set、English"}
+    - {id: 504, cat: XXX, desc: "SMEnglish（English）"}
 
   modes:
     search: [q]
@@ -75,7 +75,7 @@ login:
     password: "{{ .Config.password }}"
     two_step_code: "{{ .Config.2facode }}"
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]
@@ -174,9 +174,9 @@ search:
       text: 259200
     description_verified:
       case:
-        span[title="通过"], span[title="通過"], span[title="Allowed"]: "Verified:"
-        span[title="未审"], span[title="未審"], span[title="Not reviewed"]: "Unverified:"
-        span[title="拒绝"], span[title="拒絕"], span[title="Denied"]: "Banned:"
+        span[title="Allowed"], span[title="Allowed"], span[title="Allowed"]: "Verified:"
+        span[title="Not reviewed"], span[title="Not reviewed"], span[title="Not reviewed"]: "Unverified:"
+        span[title="English"], span[title="English"], span[title="Denied"]: "Banned:"
     description:
       selector: td.rowfollow:nth-child(2)
       remove: a, b, font, img, span

@@ -2,7 +2,7 @@
 id: simpleanime
 name: SimpleAnime
 description: "SimpleAnime is a CHINESE Public torrent tracker for ANIME"
-language: zh-CN
+language: en-US
 type: public
 encoding: UTF-8
 links:
@@ -62,17 +62,17 @@ search:
       selector: span.date
       filters:
         - name: replace
-          args: ["秒前", " seconds ago"]
+          args: ["seconds ago", " seconds ago"]
         - name: replace
-          args: ["分钟前", " minutes ago"]
+          args: ["minutes ago", " minutes ago"]
         - name: replace
-          args: ["小时前", " hours ago"]
+          args: ["hours ago", " hours ago"]
         - name: replace
-          args: ["天前", " days ago"]
+          args: ["English", " days ago"]
         - name: replace
-          args: ["月前", " months ago"]
+          args: ["English", " months ago"]
         - name: replace
-          args: ["年前", " years ago"]
+          args: ["English", " years ago"]
         - name: timeago
     size:
       text: 512MB

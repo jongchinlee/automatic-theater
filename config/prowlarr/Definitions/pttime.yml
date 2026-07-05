@@ -2,7 +2,7 @@
 id: pttime
 name: PTTime
 description: "PTTime is a ratioless CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 requestDelay: 2
@@ -11,32 +11,32 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies(电影)", default: true}
-    - {id: 402, cat: TV, desc: "TV Series(电视剧)", default: true}
-    - {id: 403, cat: TV, desc: "TV Shows(综艺)", default: true}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries(纪录片)", default: true}
-    - {id: 405, cat: TV/Sport, desc: "Sport(体育、竞技、武术及相关)", default: true}
-    - {id: 406, cat: PC/Games, desc: "Games(游戏及相关)", default: true}
-    - {id: 408, cat: Audio, desc: "Music(音乐、专辑、MV、演唱会)", default: true}
-    - {id: 409, cat: Other, desc: "Art(舞蹈、歌剧、戏曲、相声、评书等)", default: true}
-    - {id: 411, cat: Other, desc: "Science(科学、知识、技能)", default: true}
-    - {id: 412, cat: Other, desc: "School(应试、考级、初中以上教育)", default: true}
-    - {id: 413, cat: Books, desc: "Book(书籍、有声书)", default: true}
-    - {id: 420, cat: PC, desc: "Code(IT、编程、大数据、人工智能", default: true}
-    - {id: 430, cat: TV/Anime, desc: "Animate(3D动画、2.5次元)", default: true}
-    - {id: 431, cat: TV/Anime, desc: "ACGN(二次元)", default: true}
-    - {id: 432, cat: TV/Other, desc: "Baby(婴幼、早教、小学及相关)", default: true}
-    - {id: 450, cat: Other, desc: "Resource(资源、素材、模板)", default: true}
-    - {id: 451, cat: PC, desc: "Software(软件、系统、 程序、APP等)", default: true}
-    - {id: 490, cat: Other, desc: "Other(其它)", default: true}
-    - {id: 440, cat: XXX, desc: "9kg-AV(步兵/无码)", default: false}
-    - {id: 441, cat: XXX, desc: "9kg-Sex(骑兵/有码)", default: false}
-    - {id: 442, cat: XXX, desc: "9kg-III(三级片、限制级电影)", default: false}
-    - {id: 443, cat: XXX, desc: "9kg-H动漫", default: false}
-    - {id: 444, cat: XXX, desc: "9kg-H游戏", default: false}
-    - {id: 445, cat: XXX, desc: "9kg-H书籍(书籍、有声书)", default: false}
-    - {id: 446, cat: XXX, desc: "9kg-H写真(图片、私拍、短视频）", default: false}
-    - {id: 447, cat: XXX, desc: "9kg-H音频(ASMR、音乐、音频)", default: false}
+    - {id: 401, cat: Movies, desc: "Movies(Movies)", default: true}
+    - {id: 402, cat: TV, desc: "TV Series(TV Series)", default: true}
+    - {id: 403, cat: TV, desc: "TV Shows(TV Shows)", default: true}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries(Documentary)", default: true}
+    - {id: 405, cat: TV/Sport, desc: "Sport(Sports、English、English)", default: true}
+    - {id: 406, cat: PC/Games, desc: "Games(GamesEnglish)", default: true}
+    - {id: 408, cat: Audio, desc: "Music(Music、English、MV、English)", default: true}
+    - {id: 409, cat: Other, desc: "Art(English、English、English、English、English)", default: true}
+    - {id: 411, cat: Other, desc: "Science(English、English、English)", default: true}
+    - {id: 412, cat: Other, desc: "School(English、English、English)", default: true}
+    - {id: 413, cat: Books, desc: "Book(English、Audiobooks)", default: true}
+    - {id: 420, cat: PC, desc: "Code(IT、English、English、English", default: true}
+    - {id: 430, cat: TV/Anime, desc: "Animate(3DAnime、2.5English)", default: true}
+    - {id: 431, cat: TV/Anime, desc: "ACGN", default: true}
+    - {id: 432, cat: TV/Other, desc: "Baby(English、English、English)", default: true}
+    - {id: 450, cat: Other, desc: "Resource(English、English、English)", default: true}
+    - {id: 451, cat: PC, desc: "Software(Software、English、 English、APPEnglish)", default: true}
+    - {id: 490, cat: Other, desc: "Other", default: true}
+    - {id: 440, cat: XXX, desc: "9kg-AV(English)", default: false}
+    - {id: 441, cat: XXX, desc: "9kg-Sex(English)", default: false}
+    - {id: 442, cat: XXX, desc: "9kg-III(English、EnglishMovies)", default: false}
+    - {id: 443, cat: XXX, desc: "9kg-HAnime", default: false}
+    - {id: 444, cat: XXX, desc: "9kg-HGames", default: false}
+    - {id: 445, cat: XXX, desc: "9kg-HEnglish(English、Audiobooks)", default: false}
+    - {id: 446, cat: XXX, desc: "9kg-HPhoto Set(English、English、English）", default: false}
+    - {id: 447, cat: XXX, desc: "9kg-HAudio(ASMR、Music、Audio)", default: false}
 
   modes:
     search: [q]
@@ -87,7 +87,7 @@ login:
     dutime: month
     ssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

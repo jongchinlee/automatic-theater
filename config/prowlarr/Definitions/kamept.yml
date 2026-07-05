@@ -2,7 +2,7 @@
 id: kamept
 name: KamePT
 description: "KamePT is a CHINESE Private Torrent Tracker for 3X"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,22 +10,22 @@ links:
 
 caps:
   categorymappings:
-    - {id: 410, cat: XXX, desc: "同人AV"}
-    - {id: 413, cat: XXX, desc: "男娘"}
-    - {id: 414, cat: XXX, desc: "同人VR"}
-    - {id: 417, cat: XXX, desc: "Cosplay套图"}
-    - {id: 419, cat: XXX, desc: "里番"}
-    - {id: 411, cat: XXX, desc: "2D动画"}
-    - {id: 423, cat: XXX, desc: "3D动画"}
-    - {id: 424, cat: XXX/ImageSet, desc: "单行本"}
-    - {id: 435, cat: XXX/ImageSet, desc: "同人志"}
-    - {id: 433, cat: XXX/ImageSet, desc: "画师CG"}
-    - {id: 415, cat: XXX/Other, desc: "游戏"}
-    - {id: 418, cat: XXX/Other, desc: "中文游戏"}
-    - {id: 434, cat: XXX/ImageSet, desc: "游戏CG"}
-    - {id: 420, cat: XXX/Other, desc: "外语音声"}
-    - {id: 421, cat: XXX/Other, desc: "中文音声"}
-    - {id: 422, cat: XXX/Other, desc: "视频音声"}
+    - {id: 410, cat: XXX, desc: "EnglishAV"}
+    - {id: 413, cat: XXX, desc: "English"}
+    - {id: 414, cat: XXX, desc: "EnglishVR"}
+    - {id: 417, cat: XXX, desc: "CosplayEnglish"}
+    - {id: 419, cat: XXX, desc: "English"}
+    - {id: 411, cat: XXX, desc: "2DAnime"}
+    - {id: 423, cat: XXX, desc: "3DAnime"}
+    - {id: 424, cat: XXX/ImageSet, desc: "English"}
+    - {id: 435, cat: XXX/ImageSet, desc: "English"}
+    - {id: 433, cat: XXX/ImageSet, desc: "EnglishCG"}
+    - {id: 415, cat: XXX/Other, desc: "Games"}
+    - {id: 418, cat: XXX/Other, desc: "MandarinGames"}
+    - {id: 434, cat: XXX/ImageSet, desc: "GamesCG"}
+    - {id: 420, cat: XXX/Other, desc: "English"}
+    - {id: 421, cat: XXX/Other, desc: "MandarinEnglish"}
+    - {id: 422, cat: XXX/Other, desc: "English"}
 
   modes:
     search: [q]

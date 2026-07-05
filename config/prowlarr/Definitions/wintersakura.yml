@@ -2,7 +2,7 @@
 id: wintersakura
 name: WinterSakura
 description: "WinterSakura is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 requestDelay: 2
@@ -12,25 +12,25 @@ links:
 caps:
   categorymappings:
     # torrents.php
-    - {id: 409, cat: Other, desc: "Misc其他", default: true}
-    - {id: 407, cat: TV/Sport, desc: "Sports体育", default: true}
-    - {id: 406, cat: Audio/Video, desc: "Music Videos音乐MV", default: true}
-    - {id: 408, cat: Audio, desc: "HQ Audio无损音乐", default: true}
-    - {id: 418, cat: TV, desc: "TV Shows综艺(分集)", default: true}
-    - {id: 403, cat: TV, desc: "TV Shows综艺(Packs合集)", default: true}
-    - {id: 402, cat: TV, desc: "TV Series剧集(分集)", default: true}
-    - {id: 414, cat: TV, desc: "TV Series剧集(Packs合集)", default: true}
-    - {id: 413, cat: TV/Anime, desc: "Animation series动漫剧集(分集)", default: true}
-    - {id: 423, cat: TV/Anime, desc: "Animation series动漫剧集(Packs合集)", default: true}
-    - {id: 422, cat: TV/Anime, desc: "Animation flims动漫电影", default: true}
-    - {id: 410, cat: TV/Documentary, desc: "Documentaries纪录片", default: true}
-    - {id: 401, cat: Movies, desc: "Movies电影", default: true}
+    - {id: 409, cat: Other, desc: "MiscOther", default: true}
+    - {id: 407, cat: TV/Sport, desc: "SportsSports", default: true}
+    - {id: 406, cat: Audio/Video, desc: "Music VideosMusicMV", default: true}
+    - {id: 408, cat: Audio, desc: "HQ AudioEnglishMusic", default: true}
+    - {id: 418, cat: TV, desc: "TV ShowsTV Shows", default: true}
+    - {id: 403, cat: TV, desc: "TV ShowsTV Shows(PacksEnglish)", default: true}
+    - {id: 402, cat: TV, desc: "TV SeriesTV Series", default: true}
+    - {id: 414, cat: TV, desc: "TV SeriesTV Series(PacksEnglish)", default: true}
+    - {id: 413, cat: TV/Anime, desc: "Animation seriesAnimeTV Series", default: true}
+    - {id: 423, cat: TV/Anime, desc: "Animation seriesAnimeTV Series(PacksEnglish)", default: true}
+    - {id: 422, cat: TV/Anime, desc: "Animation flimsAnimeMovies", default: true}
+    - {id: 410, cat: TV/Documentary, desc: "DocumentariesDocumentary", default: true}
+    - {id: 401, cat: Movies, desc: "MoviesMovies", default: true}
     # special.php
-    - {id: 427, cat: PC, desc: "Software软件/程序/代码", default: false}
-    - {id: 426, cat: Books/Technical, desc: "Papers期刊/论文", default: false}
-    - {id: 428, cat: Books/EBook, desc: "Books图书", default: false}
-    - {id: 425, cat: Other, desc: "Database数据/数据库", default: false}
-    - {id: 424, cat: Other, desc: "Course课程", default: false}
+    - {id: 427, cat: PC, desc: "SoftwareSoftware/English", default: false}
+    - {id: 426, cat: Books/Technical, desc: "PapersEnglish", default: false}
+    - {id: 428, cat: Books/EBook, desc: "BooksEnglish", default: false}
+    - {id: 425, cat: Other, desc: "DatabaseEnglish", default: false}
+    - {id: 424, cat: Other, desc: "CourseEnglish", default: false}
 
   modes:
     search: [q]
@@ -96,7 +96,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

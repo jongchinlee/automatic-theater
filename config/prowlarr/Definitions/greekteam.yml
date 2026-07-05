@@ -20,7 +20,7 @@ caps:
     - {id: 46, cat: PC, desc: "Applications Linux"}
     - {id: 45, cat: PC, desc: "Applications MAC"}
     - {id: 23, cat: PC, desc: "Applications Windows"}
-    - {id: 10, cat: Books, desc: "Books/Magazines/English"}
+    - {id: 10, cat: Books, desc: "Books/Magazines"}
     - {id: 12, cat: Books, desc: "Books/Magazines/Greek"}
     - {id: 8, cat: TV/Documentary, desc: "Documentaries"}
     - {id: 5, cat: TV/Documentary, desc: "Documentaries Greek"}

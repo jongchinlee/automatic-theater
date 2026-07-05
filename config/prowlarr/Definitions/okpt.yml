@@ -2,7 +2,7 @@
 id: okpt
 name: OKPT
 description: "OKPT is a CHINESE Private site for MOVIES / TV / MUSIC / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 requestDelay: 2
@@ -11,26 +11,26 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies/电影", default: true}
-    - {id: 402, cat: TV, desc: "TV Series/电视剧", default: true}
-    - {id: 403, cat: TV, desc: "TV Shows/综艺", default: true}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries/纪录片", default: true}
-    - {id: 407, cat: TV/Sport, desc: "Sports/体育", default: true}
-    - {id: 436, cat: Books/Comics, desc: "Comics/漫画书", default: true}
-    - {id: 405, cat: TV/Anime, desc: "Animations/动漫", default: true}
-    - {id: 434, cat: Books/EBook, desc: "Books/书刊", default: true}
-    - {id: 432, cat: Audio/Audiobook, desc: "Audiobook/有声书", default: true}
-    - {id: 413, cat: Console, desc: "Games/游戏", default: true}
-    - {id: 431, cat: PC, desc: "Software/软件", default: true}
-    - {id: 409, cat: Other, desc: "Misc/其他", default: true}
+    - {id: 401, cat: Movies, desc: "Movies/Movies", default: true}
+    - {id: 402, cat: TV, desc: "TV Series/TV Series", default: true}
+    - {id: 403, cat: TV, desc: "TV Shows/TV Shows", default: true}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries/Documentary", default: true}
+    - {id: 407, cat: TV/Sport, desc: "Sports/Sports", default: true}
+    - {id: 436, cat: Books/Comics, desc: "Comics/MangaEnglish", default: true}
+    - {id: 405, cat: TV/Anime, desc: "Animations/Anime", default: true}
+    - {id: 434, cat: Books/EBook, desc: "Books", default: true}
+    - {id: 432, cat: Audio/Audiobook, desc: "Audiobook/Audiobooks", default: true}
+    - {id: 413, cat: Console, desc: "Games/Games", default: true}
+    - {id: 431, cat: PC, desc: "Software/Software", default: true}
+    - {id: 409, cat: Other, desc: "Misc/Other", default: true}
     # special
-    - {id: 412, cat: XXX/Other, desc: "3XBook/写真图影", default: false}
-    - {id: 411, cat: XXX/x264, desc: "3XVideo/写真影片", default: false}
-    - {id: 410, cat: XXX/ImageSet, desc: "3XImageSet/写真图片", default: false}
-    - {id: 415, cat: Audio, desc: "Music/音乐", default: false}
-    - {id: 437, cat: Audio/Video, desc: "Concert/演唱会", default: false}
-    - {id: 438, cat: Audio/Video, desc: "Concert/音乐会", default: false}
-    - {id: 416, cat: Other, desc: "Misc/其它", default: false}
+    - {id: 412, cat: XXX/Other, desc: "3XBook/Photo SetEnglish", default: false}
+    - {id: 411, cat: XXX/x264, desc: "3XVideo/Photo SetMovies", default: false}
+    - {id: 410, cat: XXX/ImageSet, desc: "3XImageSet/Photo SetEnglish", default: false}
+    - {id: 415, cat: Audio, desc: "Music/Music", default: false}
+    - {id: 437, cat: Audio/Video, desc: "Concert", default: false}
+    - {id: 438, cat: Audio/Video, desc: "Concert/MusicEnglish", default: false}
+    - {id: 416, cat: Other, desc: "Misc", default: false}
 
   modes:
     search: [q]
@@ -177,9 +177,9 @@ search:
       text: 129600
     description_verified:
       case:
-        span[title="通过"], span[title="通過"], span[title="Allowed"]: "Verified:"
-        span[title="未审"], span[title="未審"], span[title="Not reviewed"]: "Unverified:"
-        span[title="拒绝"], span[title="拒絕"], span[title="Denied"]: "Banned:"
+        span[title="Allowed"], span[title="Allowed"], span[title="Allowed"]: "Verified:"
+        span[title="Not reviewed"], span[title="Not reviewed"], span[title="Not reviewed"]: "Unverified:"
+        span[title="English"], span[title="English"], span[title="Denied"]: "Banned:"
     description:
       selector: td.rowfollow:nth-child(2)
       remove: a, b, font, img, span

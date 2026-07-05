@@ -2,7 +2,7 @@
 id: comicat
 name: comicat
 description: "comicat is a CHINESE Public tracker for Anime / Hentai / Manga"
-language: zh-CN
+language: en-US
 type: public
 encoding: UTF-8
 requestDelay: 2
@@ -13,11 +13,11 @@ settings: []
 
 caps:
   categorymappings:
-    - {id: 1, cat: TV/Anime, desc: "动画(Anime)"}
-    - {id: 2, cat: Books/Comics, desc: "漫画(Manga)"}
-    - {id: 3, cat: Audio, desc: "音乐(Music)"}
-    - {id: 4, cat: TV/Anime, desc: "周边(Peripheral)"}
-    - {id: 5, cat: Other, desc: "其它(Other)"}
+    - {id: 1, cat: TV/Anime, desc: "Anime(Anime)"}
+    - {id: 2, cat: Books/Comics, desc: "Manga(Manga)"}
+    - {id: 3, cat: Audio, desc: "Music(Music)"}
+    - {id: 4, cat: TV/Anime, desc: "English(Peripheral)"}
+    - {id: 5, cat: Other, desc: "English(Other)"}
     - {id: 6, cat: TV/Anime, desc: "Raw"}
 
   modes:
@@ -69,24 +69,24 @@ search:
         - name: dateparse
           args: "yyyy/MM/dd zzz"
     date_today:
-      selector: td:nth-child(1):contains("今天")
+      selector: td:nth-child(1):contains("Today")
       optional: true
       filters:
         - name: replace
-          args: ["今天", ""]
+          args: ["Today", ""]
         - name: append
           args: " +08:00" # CST (China)
         - name: timeparse
           args: "HH:mm zzz"
     date_yday:
-      selector: td:nth-child(1):contains("昨天")
+      selector: td:nth-child(1):contains("Yesterday")
       optional: true
       filters:
         - name: re_replace
           args: [".+", "yesterday"]
         - name: fuzzytime
     date_ago:
-      selector: td:nth-child(1):contains("前天")
+      selector: td:nth-child(1):contains("English")
       optional: true
       filters:
         - name: re_replace

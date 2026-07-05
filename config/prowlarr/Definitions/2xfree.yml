@@ -2,7 +2,7 @@
 id: 2xfree
 name: 2xFree
 description: "2xFree is a CHINESE Private Torrent Tracker for 3D MOVIES / TV"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -12,14 +12,14 @@ caps:
   categorymappings:
 
     # torrents.php
-    - {id: 526, cat: Movies, desc: "3DMovies(3D电影)"}
-    - {id: 527, cat: TV, desc: "3DSeries(3D剧集)"}
-    - {id: 533, cat: Movies, desc: "VRMovies(VR电影)"}
-    - {id: 534, cat: TV, desc: "VRSeries(VR剧集)"}
-    - {id: 537, cat: TV, desc: "VRShows(VR演出)"}
-    - {id: 530, cat: Console, desc: "VRGame(VR一体机游戏)"}
-    - {id: 531, cat: PC/Games, desc: "PCVRGame(PCVR游戏)"}
-    - {id: 532, cat: Other, desc: "VRTools(VR工具软件)"}
+    - {id: 526, cat: Movies, desc: "3DMovies(3DMovies)"}
+    - {id: 527, cat: TV, desc: "3DSeries(3DTV Series)"}
+    - {id: 533, cat: Movies, desc: "VRMovies(VRMovies)"}
+    - {id: 534, cat: TV, desc: "VRSeries(VRTV Series)"}
+    - {id: 537, cat: TV, desc: "VRShows(VREnglish)"}
+    - {id: 530, cat: Console, desc: "VRGame(VREnglishGames)"}
+    - {id: 531, cat: PC/Games, desc: "PCVRGame(PCVRGames)"}
+    - {id: 532, cat: Other, desc: "VRTools(VREnglishSoftware)"}
 
   modes:
     search: [q]
@@ -87,7 +87,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

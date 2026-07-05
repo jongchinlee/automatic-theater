@@ -1,246 +1,122 @@
-- [🌟 自动化家庭影院 🌟](#-自动化家庭影院-)
-  - [🐳 简介](#-简介)
-  - [🔥 配置](#-配置)
-    - [💻 1. 硬件](#-1-硬件)
-    - [🐧 2. 系统](#-2-系统)
-    - [🌐 3. 网络](#-3-网络)
-  - [👨‍💻 安装](#-安装)
-    - [1. 安装 docker 和 docker-compose](#1-安装-docker-和-docker-compose)
-      - [1.1. docker](#11-docker)
-      - [1.2. docker-compose](#12-docker-compose)
-    - [2. 安装 automatic-theater](#2-安装-automatic-theater)
-      - [2.1. 下载项目](#21-下载项目)
-      - [2.1. 修改配置文件](#21-修改配置文件)
-      - [2.3. 执行安装脚本](#23-执行安装脚本)
-      - [2.4. 拉取镜像](#24-拉取镜像)
-      - [2.4. 启动和关闭](#24-启动和关闭)
-  - [📺 使用](#-使用)
-  - [😘 如何贡献](#-如何贡献)
-  - [🃏 使用许可](#-使用许可)
+# Automatic Theater
 
-# 🌟 自动化家庭影院 🌟
+Automatic Theater is a preconfigured Docker Compose media stack for fast deployment and migration. The repository keeps the services, default application state, and install script together so a new host can be started with minimal manual setup.
 
-## 🐳 简介
+## Included services
 
-> 最近折腾了一套自动化家庭影院，但是配置起来较为麻烦，所以利用 docker 方便部署和迁移的特点，提前配置好并打包，并利用脚本进行快速迁移部署，开箱即用，无须再对每个系统进行繁琐的配置
+| Service | Purpose | URL |
+| --- | --- | --- |
+| Heimdall | Dashboard and launch page | `https://ip:60211` |
+| FlareSolverr | Cloudflare challenge solver for Prowlarr | `http://ip:60213` |
+| Prowlarr | Indexer manager | `http://ip:60223` |
+| JProxy | Search proxy/filter between Sonarr/Radarr and Prowlarr | `http://ip:60215` |
+| Seerr | Request portal for movies and series | `http://ip:60216` |
+| Radarr | Movie automation | `http://ip:60217` |
+| Sonarr | Series and anime automation | `http://ip:60218` |
+| Bazarr | Subtitle automation | `http://ip:60222` |
+| Recyclarr | Sonarr/Radarr quality-rule sync | configuration only |
+| qBittorrent | Download client | `http://ip:60219` |
+| ChineseSubFinder | Subtitle finder | `http://ip:60221` |
+| Emby | Media server | `http://ip:60220` |
 
-😊 本项目的大致流程
+Default login for preconfigured services that require credentials:
+
+| Username | Password |
+| --- | --- |
+| `atm` | `atm@20230101` |
+
+## Runtime flow
 
 ```mermaid
 graph LR
-    1[Seerr] == 手动请求电视剧/综艺/动漫 ==> 2[Sonarr] == 自动搜索/下载 ==> 3[JProxy] == 自动搜索 ==> 4[Prowlarr]
-    1[Seerr] == 手动请求电影 ==> 6[Radarr] == 自动搜索/下载 ==> 3[JProxy]
-    3[JProxy] == 自动下载 ==> 5[qBittorrentee]
-    2[Sonarr] == 自动导入 ==> 7[Emby]
-    6[Radarr] == 自动导入 ==> 7[Emby]
-    9[Bazarr] == 自动下载字幕 ==> 7[Emby]
-    10[Recyclarr] == 同步质量规则 ==> 2[Sonarr]
-    10[Recyclarr] == 同步质量规则 ==> 6[Radarr]
-    7[Emby] == 自动刮削信息 ==> 7[Emby]
-    11[用户] == 使用 ==> 8[浏览器/手机/电脑/电视] == 观看 ==> 7[Emby]
-    11[用户] == 使用 ==> 1[Seerr]
+    Seerr == Request movies or series ==> SonarrRadarr[Sonarr / Radarr]
+    SonarrRadarr == Search ==> JProxy
+    JProxy == Proxy search ==> Prowlarr
+    Prowlarr == Releases ==> JProxy
+    SonarrRadarr == Download ==> qBittorrent
+    qBittorrent == Completed media ==> MediaFolders[/media/video]
+    SonarrRadarr == Import and rename ==> Emby
+    Bazarr == Download subtitles ==> Emby
+    Recyclarr == Sync quality rules ==> SonarrRadarr
+    User == Watch ==> Emby
 ```
 
-🤗 本项目涉及系统
+## Defaults
 
-| 系统 | 功能 | 汉化 | 说明 |
-| :---: | :---: | :---: | :---: |
-| [Heimdall](https://github.com/linuxserver/Heimdall) | 程序仪表盘  | ⭕ | 导航页，自定义了 CSS 和 JS，开箱即用 |
-| [Emby](https://emby.media) | 媒体服务器 | ⭕ | 刮削信息，提供观看服务 |
-| [Seerr](https://github.com/seerr-team/seerr) | 聚合搜索 | ⭕ | 搜索并推送到 Sonarr / Radarr |
-| [Radarr](https://github.com/Radarr/Radarr) | 电影订阅系统 | ⭕ | 定时搜索，下载，重命名并导入 |
-| [Sonarr](https://github.com/Sonarr/Sonarr) | 电视剧和动漫订阅系统 | ⭕ | 定时搜索，下载，重命名并导入 |
-| [Prowlarr](https://github.com/Prowlarr/Prowlarr) | 种子站代理 | ⭕ | 可添加种子站，提供种子搜索，支持结果缓存 |
-| [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) | 绕过 Cloudflare 和 DDoS-GUARD | - | Prowlarr 已配置，无其他操作 |
-| [JProxy](https://github.com/LuckyPuppy514/jproxy) | 种子站代理过滤 | ⭕ | 介于 Sonarr / Radarr 和 Prowlarr / Prowlarr 之间的代理，主要用于优化查询和提升识别率 |
-| [qBittorrent](https://github.com/qbittorrent/qBittorrent) | 下载客户端 | ⭕ | qBittorrent |
-| [Bazarr](https://github.com/morpheus65535/bazarr) | 字幕下载 | ⭕ | 自动下载电影和电视剧字幕 |
-| [ChineseSubFinder](https://github.com/ChineseSubFinder/ChineseSubFinder) | 字幕下载 | ⭕ | 自动下载电影和电视剧字幕 |
-| [Recyclarr](https://github.com/recyclarr/recyclarr) | 质量规则同步 | - | 同步 Sonarr / Radarr 质量配置 |
+- Timezone: `Asia/Singapore`
+- Docker subnet: `172.30.12.0/24`
+- Media root: `/media/video`
+- Media folders: `/media/video/movie`, `/media/video/serial`, `/media/video/anime`, `/media/video/download`
+- Config root: `./config`
+- Image tags: `latest`
+- Default language: English
 
-## 🔥 配置
+If `172.30.12.0/24` conflicts with the target host network, edit `docker-compose-default.yml` before running the installer.
 
-### 💻 1. 硬件
+## Prerequisites
 
-| 名称 | 推荐配置 | 说明 |
-| :---: | :---: | :---: |
-| CPU | 4核 | 例如：J1900, J3160, J4125 等 |
-| GPU | 非必要 | 主要用于 Emby 为转码提供硬件加速 |
-| 内存 | 4G | 4G 完全够用，2G 较为勉强 |
-| 固态 | 32G | 主要用于创建容器，保存配置 |
-| 硬盘 | 512G | 取决于你的视频数量，也可以参考 [cloud-drive](https://github.com/LuckyPuppy514/cloud-drive) 挂载云盘 |
-| 网络 | 100M | 内网速率 100M 或以上，无线最好支持 5G |
+Install Git, Docker, and Docker Compose v2 on the target host.
 
-### 🐧 2. 系统
-
-支持 docker, docker-compose 即可，例如：
-
-- debian
-- ubuntu
-- openwrt
-- unraid
-- 群晖
-  ......
-
-### 🌐 3. 网络
-
-🔥 重要事情说三遍，必须能够科学上网 🔥  
-🔥 重要事情说三遍，必须能够科学上网 🔥  
-🔥 重要事情说三遍，必须能够科学上网 🔥  
-
-执行以下命令，如果能够输出网页代码，则说明可以科学上网
+Ubuntu/Debian example:
 
 ```bash
-curl https://www.youtube.com
+sudo apt update
+sudo apt install -y sudo git curl
+curl -fsSL https://get.docker.com | sudo sh
+sudo docker compose version
 ```
 
-🙏 如果你是能够处理以下问题的大佬，可以不用科学上网
+If the current user is not in the Docker group, run Docker commands with `sudo`.
 
-- 😢 docker 镜像拉取慢
-- 😰 无法访问 TMDB, TVDB
-- 😭 索引器经常无法使用
+## Install
 
-Docker 内部网络默认使用私有网段 `172.30.12.0/24`，如果和现有网络冲突，修改 `docker-compose-default.yml` 后重新执行安装脚本。
-
-## 👨‍💻 安装
-
-安装会用到以下命令，请先自行安装，这里仅提供 ubuntu / debian 的安装方式
+Clone or copy the repository to the target host:
 
 ```bash
-apt install sudo git curl
+git clone https://github.com/jongchinlee/automatic-theater.git
+cd automatic-theater
 ```
 
-### 1. 安装 docker 和 docker-compose
-
-#### 1.1. docker
-
-执行下面的命令，如果有输出版本号证明已经安装
+Review and edit `docker-compose-default.env` if needed:
 
 ```bash
-sudo docker -v
+vi docker-compose-default.env
 ```
 
-未安装，则执行下面的命令进行安装 (debian / ubuntu / centos)
+Run the installer:
 
 ```bash
-sudo curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+chmod +x install.sh
+./install.sh
 ```
 
-> 其他系统请参考：[菜鸟教程](https://www.runoob.com/docker/docker-tutorial.html) 或自行查阅相关资料
+The installer creates media directories, writes `.env` and `docker-compose.yml`, and adds detected hardware-acceleration devices.
 
-#### 1.2. docker-compose
-
-执行下面的命令，如果有输出版本号证明已经安装
-
-```bash
-sudo docker-compose -v
-```
-
-未安装，则执行下面的命令进行安装
-
-```bash
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.11.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose
-```
-
-### 2. 安装 automatic-theater
-
-#### 2.1. 下载项目
-
-```bash
-sudo git clone https://github.com/jongchinlee/automatic-theater.git
-```
-
-如果提示找不到 git 命令
-
-- 方法一：自行查找自己系统安装 git 的方式
-- 方法二：[👆 点我下载 👆](https://github.com/jongchinlee/automatic-theater/archive/refs/heads/main.zip) 解压后上传对应目录（记得修改目录名称为 `automatic-theater`）
-
-#### 2.1. 修改配置文件
-
-在 automatic-theater 目录下执行
-
-```bash
-sudo vi docker-compose-default.env
-```
-
-- 删除：delete
-- 输入：i
-- 保存并退出：ESC 输入 :wq
-
-![20230116142029](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/20230116142029.png)
-
-> 不会使用 vi 可下载到本地修改后上传
-
-#### 2.3. 执行安装脚本
-
-在 automatic-theater 目录下执行
-
-```bash
-chmod +x install.sh && ./install.sh
-```
-
-![20230116141824](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/20230116141824.png)
-
-#### 2.4. 拉取镜像
+Start the stack:
 
 ```bash
 sudo docker compose pull
-```
-
-> 因为镜像较多，拉取较慢，某个失败或卡着，ctrl+c 强制停止，再次执行即可，多试几次
-
-![20230116142504](https://cdn.jsdelivr.net/gh/LuckyPuppy514/pic-bed/common/20230116142504.png)
-
-#### 2.4. 启动和关闭
-
-启动
-
-```bash
 sudo docker compose up -d
 ```
 
-关闭
+Stop the stack:
 
 ```bash
 sudo docker compose down
 ```
 
-> 后续启动和关闭等操作继续使用 docker compose / docker-compose 命令执行
-> 修改参数建议还是修改 docker-compose.yml 和 .env
+## Migration
 
-## 📺 使用
+To migrate, copy the repository directory and the media root to the new host, review `docker-compose-default.env`, run `./install.sh`, then start with Docker Compose.
 
-```mermaid
-graph LR
-    1[Heimdall] == 1. 搜索和请求电影/电视剧/动漫 ==> 3[Seerr]
-    1[Heimdall] == 2. 查看搜索结果 ==> 4[Sonarr / Radarr]
-    1[Heimdall] == 3. 查看下载进度 ==> 5[qBittorrentee]
-    1[Heimdall] == 4. 观看 ==> 6[Emby]
-```
+## Security note
 
-[🌟 【Emby客户端】多平台免费优化版 🌟](https://kutt.lckp.top/jOPDvh)
+This repository intentionally ships preconfigured application state for out-of-the-box deployment. Before exposing any service outside a trusted network, change passwords and API keys and update dependent service settings.
 
-| 名称 | 地址 | 用户名 | 密码 |
-| :---: | :---: | :---: | :---: |
-| Heimdall | `https://ip:60211`  | - | - |
-| FlareSolverr | `http://ip:60213` | - | - |
-| Prowlarr | `http://ip:60223` | atm | atm@20230101 |
-| JProxy | `http://ip:60215` | atm | atm@20230101 |
-| Seerr | `http://ip:60216` | atm | atm@20230101 |
-| Radarr | `http://ip:60217` | atm | atm@20230101 |
-| Sonarr | `http://ip:60218` | atm | atm@20230101 |
-| Bazarr | `http://ip:60222` | atm | atm@20230101 |
-| Recyclarr | - | - | - |
-| qBittorrent | `http://ip:60219` | atm | atm@20230101 |
-| ChineseSubFinder | `http://ip:60221` | atm | atm@20230101 |
-| Emby | `http://ip:60220` | atm | atm@20230101 |
+## Contributing
 
-🔥 注意：如需开启外网访问，注意修改对应系统的密码和 API Key，并同时修改其他系统中的配置 🔥
+Issues and pull requests are welcome at <https://github.com/jongchinlee/automatic-theater>.
 
-## 😘 如何贡献
+## License
 
-非常欢迎你的加入！[提一个 Issue](https://github.com/LuckyPuppy514/automatic-theater/issues/new) 或者提交一个 Pull Request
-
-## 🃏 使用许可
-
-[MIT](https://github.com/LuckyPuppy514/automatic-theater/blob/main/LICENSE) © LuckyPuppy514
+MIT. Original project by LuckyPuppy514.

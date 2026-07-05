@@ -2,7 +2,7 @@
 id: hdfans
 name: HDFans
 description: "HDFans is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,22 +10,22 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies/电影"}
-    - {id: 402, cat: TV, desc: "TV Series/电视剧"}
-    - {id: 403, cat: TV/Documentary, desc: "Documentaries/纪录片"}
-    - {id: 406, cat: Audio, desc: "Music/音乐"}
-    - {id: 416, cat: TV, desc: "TV Shows/综艺"}
-    - {id: 417, cat: TV/Anime, desc: "Animations/动漫"}
-    - {id: 407, cat: Audio/Video, desc: "Music Videos/音乐视频"}
-    - {id: 408, cat: Audio/Video, desc: "Concert/演唱会"}
-    - {id: 404, cat: Other, desc: "Education/教育"}
-    - {id: 405, cat: Audio/Audiobook, desc: "Audio Books/有声读物"}
-    - {id: 409, cat: Movies/Other, desc: "Drama/戏剧"}
-    - {id: 418, cat: TV/Sport, desc: "Sports/体育"}
-    - {id: 419, cat: PC/0day, desc: "Software/软件"}
-    - {id: 421, cat: PC/Games, desc: "Games/游戏"}
-    - {id: 423, cat: Books/EBook, desc: "E-Books/电子书"}
-    - {id: 410, cat: Other, desc: "Others/其他"}
+    - {id: 401, cat: Movies, desc: "Movies/Movies"}
+    - {id: 402, cat: TV, desc: "TV Series/TV Series"}
+    - {id: 403, cat: TV/Documentary, desc: "Documentaries/Documentary"}
+    - {id: 406, cat: Audio, desc: "Music/Music"}
+    - {id: 416, cat: TV, desc: "TV Shows/TV Shows"}
+    - {id: 417, cat: TV/Anime, desc: "Animations/Anime"}
+    - {id: 407, cat: Audio/Video, desc: "Music Videos/MusicEnglish"}
+    - {id: 408, cat: Audio/Video, desc: "Concert"}
+    - {id: 404, cat: Other, desc: "Education"}
+    - {id: 405, cat: Audio/Audiobook, desc: "Audio Books"}
+    - {id: 409, cat: Movies/Other, desc: "Drama"}
+    - {id: 418, cat: TV/Sport, desc: "Sports/Sports"}
+    - {id: 419, cat: PC/0day, desc: "Software/Software"}
+    - {id: 421, cat: PC/Games, desc: "Games/Games"}
+    - {id: 423, cat: Books/EBook, desc: "E-Books/E-Books"}
+    - {id: 410, cat: Other, desc: "Others/Other"}
 
   modes:
     search: [q]
@@ -91,7 +91,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
       message:
         selector: td.text
   test:
@@ -194,9 +194,9 @@ search:
       text: 0.81
     description_verified:
       case:
-        span[title="通过"], span[title="通過"], span[title="Allowed"]: "Verified:"
-        span[title="未审"], span[title="未審"], span[title="Not reviewed"]: "Unverified:"
-        span[title="拒绝"], span[title="拒絕"], span[title="Denied"]: "Banned:"
+        span[title="Allowed"], span[title="Allowed"], span[title="Allowed"]: "Verified:"
+        span[title="Not reviewed"], span[title="Not reviewed"], span[title="Not reviewed"]: "Unverified:"
+        span[title="English"], span[title="English"], span[title="Denied"]: "Banned:"
     description:
       selector: td:nth-child(2)
       remove: a, b, font, img, span

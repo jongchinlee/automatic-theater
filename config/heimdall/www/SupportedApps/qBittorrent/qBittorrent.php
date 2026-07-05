@@ -22,7 +22,7 @@ class qBittorrent extends \App\SupportedApps implements \App\EnhancedApps
 		$attrs = [
             "cookies" => $this->jar,
         ];
-		
+
 		#$test = parent::appTest($this->url('version/api'));
 		$test = parent::appTest($this->url("api/v2/app/version"), $attrs);
 		echo $test->status;

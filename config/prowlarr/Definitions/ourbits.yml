@@ -2,7 +2,7 @@
 id: ourbits
 name: OurBits
 description: "OurBits (HDPter) is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -171,5 +171,5 @@ search:
       remove: a, b, font, img, span
       filters:
         - name: replace
-          args: [" 剩余时间：", ""]
+          args: [" Remaining time：", ""]
 # Ourbits 1.1.0 (Based on NexusPHP Standard v1.5 Beta 4) 9169dad 2023-11-20

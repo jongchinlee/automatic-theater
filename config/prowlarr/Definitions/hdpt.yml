@@ -2,7 +2,7 @@
 id: hdpt
 name: HDPT
 description: "HDPT is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,22 +10,22 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies/电影"}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries/纪录片"}
-    - {id: 405, cat: TV/Anime, desc: "Animations/动漫"}
-    - {id: 402, cat: TV, desc: "TV Series/电视剧"}
-    - {id: 403, cat: TV, desc: "TV Shows/综艺"}
-    - {id: 406, cat: Audio/Video, desc: "Music Videos/音乐 视频"}
-    - {id: 407, cat: TV/Sport, desc: "Sports/体育"}
-    - {id: 409, cat: Other, desc: "Misc/其他"}
-    - {id: 408, cat: Audio, desc: "HQ Audio/高清音轨"}
-    - {id: 410, cat: PC, desc: "Software/软件"}
-    - {id: 411, cat: Books/EBook, desc: "E-book/电子书"}
-    - {id: 412, cat: Books/Comics, desc: "Comics/漫画"}
-    - {id: 413, cat: Other/Misc, desc: "Learning/学习资料"}
-    - {id: 414, cat: Console, desc: "Games/游戏"}
-    - {id: 415, cat: Other/Misc, desc: "gallery/图库"}
-    - {id: 416, cat: Audio, desc: "Quyi/曲艺"}
+    - {id: 401, cat: Movies, desc: "Movies/Movies"}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries/Documentary"}
+    - {id: 405, cat: TV/Anime, desc: "Animations/Anime"}
+    - {id: 402, cat: TV, desc: "TV Series/TV Series"}
+    - {id: 403, cat: TV, desc: "TV Shows/TV Shows"}
+    - {id: 406, cat: Audio/Video, desc: "Music Videos/Music English"}
+    - {id: 407, cat: TV/Sport, desc: "Sports/Sports"}
+    - {id: 409, cat: Other, desc: "Misc/Other"}
+    - {id: 408, cat: Audio, desc: "HQ Audio/HDAudio Track"}
+    - {id: 410, cat: PC, desc: "Software/Software"}
+    - {id: 411, cat: Books/EBook, desc: "E-book/E-Books"}
+    - {id: 412, cat: Books/Comics, desc: "Comics/Manga"}
+    - {id: 413, cat: Other/Misc, desc: "Learning/LearningEnglish"}
+    - {id: 414, cat: Console, desc: "Games/Games"}
+    - {id: 415, cat: Other/Misc, desc: "gallery"}
+    - {id: 416, cat: Audio, desc: "Quyi"}
 
   modes:
     search: [q]
@@ -91,7 +91,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href*="logout.php"]

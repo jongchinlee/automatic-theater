@@ -2,7 +2,7 @@
 id: totheglorycookie
 name: ToTheGloryCookie
 description: "ToTheGlory (TTG) A Chinese tracker. This uses the cookie method for access"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 requestDelay: 2
@@ -11,75 +11,75 @@ links:
 
 caps:
   categories:
-    # 电影 Movie
-    电影DVDRip: Movies/SD # Movie DVDRip
-    电影720p: Movies/HD # Movie 720p
-    电影1080i/p: Movies/HD # Movie 1080i / p
-    BluRay原盘: Movies/BluRay # BluRay original disc
-    影视2160p: Movies/UHD # Media - 2160p
-    UHD原盘: Movies/UHD # Blu-ray UHD
-    # 纪录片 Docs
-    纪录片720p: Movies/HD # Documentary 720p
-    纪录片1080i/p: Movies/HD # Documentary 1080i / p
-    纪录片BluRay原盘: Movies/BluRay # Documentary BluRay Original
-    # 剧集 TV
-    欧美剧720p: TV/HD # TV Series - EU/US - 720p
-    欧美剧1080i/p: TV/HD # TV Series - EU/US - 1080i/p
-    高清日剧: TV/HD # TV Series - JP
-    大陆港台剧1080i/p: TV/HD # TV Series - CN - 1080i/p
-    大陆港台剧720p: TV/HD # TV Series - CN - 720p
-    高清韩剧: TV/HD # TV Series - KR
-    # 剧集包 TV Packs
-    欧美剧包: TV/HD # TV Packs - EU/US
-    日剧包: TV/HD # TV Packs - JP
-    韩剧包: TV/HD # TV Packs - CN
-    华语剧包: TV/HD # TV Packs - KR
-    # 音乐 Audio
-    (电影原声&Game)OST: Audio # OST - (Movie & Game) Track
-    无损音乐FLAC&APE: Audio/Lossless  # FLAC & APE
-    MV&amp;演唱会: Audio/Video # MV & Concert
-    # 其他 Other
-    高清体育节目: TV/Sport # HD Sports
-    高清动漫: TV/Anime # HD Animation
-    韩国综艺: TV/HD # TV Shows - KR
-    高清综艺: TV/HD # TV Shows
-    日本综艺: TV/HD # TV Shows - JP
+    # Movies Movie
+    MoviesDVDRip: Movies/SD # Movie DVDRip
+    Movies720p: Movies/HD # Movie 720p
+    Movies1080i/p: Movies/HD # Movie 1080i / p
+    BluRayEnglish: Movies/BluRay # BluRay original disc
+    English2160p: Movies/UHD # Media - 2160p
+    UHDEnglish: Movies/UHD # Blu-ray UHD
+    # Documentary Docs
+    Documentary720p: Movies/HD # Documentary 720p
+    Documentary1080i/p: Movies/HD # Documentary 1080i / p
+    DocumentaryBluRayEnglish: Movies/BluRay # Documentary BluRay Original
+    # TV Series TV
+    WesternEnglish720p: TV/HD # TV Series - EU/US - 720p
+    WesternEnglish1080i/p: TV/HD # TV Series - EU/US - 1080i/p
+    HDEnglish: TV/HD # TV Series - JP
+    English1080i/p: TV/HD # TV Series - CN - 1080i/p
+    English720p: TV/HD # TV Series - CN - 720p
+    HDEnglish: TV/HD # TV Series - KR
+    # TV SeriesEnglish TV Packs
+    WesternEnglish: TV/HD # TV Packs - EU/US
+    English: TV/HD # TV Packs - JP
+    English: TV/HD # TV Packs - CN
+    MandarinEnglish: TV/HD # TV Packs - KR
+    # Music Audio
+    (MoviesEnglish&Game)OST: Audio # OST - (Movie & Game) Track
+    EnglishMusicFLAC&APE: Audio/Lossless  # FLAC & APE
+    MV&amp;English: Audio/Video # MV & Concert
+    # Other Other
+    HDSportsEnglish: TV/Sport # HD Sports
+    HDAnime: TV/Anime # HD Animation
+    EnglishTV Shows: TV/HD # TV Shows - KR
+    HDTV Shows: TV/HD # TV Shows
+    JapanTV Shows: TV/HD # TV Shows - JP
     MiniVideo: Other # MiniVideo
-    补充音轨: Audio # Supplemental audio tracks
-    iPhone/iPad视频: PC/Mobile-Other # IPhone / iPad video
-    # 单机游戏
+    EnglishAudio Track: Audio # Supplemental audio tracks
+    iPhone/iPadEnglish: PC/Mobile-Other # IPhone / iPad video
+    # EnglishGames
     PC: PC/Games # Games - PC
     MAC: PC/Mac # Games - MAC
-    # 微软系列
+    # English
     XBOX360: Console/XBox 360 # MicroSoft - XBOX360
     XBOX1: Console/XBox # MicroSoft - XBOX360
     XBLA: Console/XBox # MicroSoft - XBLA
     XBOX+to+XBOX360: Console/XBox # MicroSoft - XBOX to XBOX360
-    # 索尼系列
+    # English
     PS2: Console/Other # SONY - PS2
     PSP: Console/PSP # SONY - PSP
     PS4: Console/PS4 # SONY - PS4
     PS3: Console/PS3 # SONY - PS3
     PSV: Console/PS Vita # SONY - PSV
-    # 任天堂系列
+    # English
     WIIU: Console/WiiU # Nintendo - WIIU
     WII: Console/Wii # Nintendo- WII
     SWITCH: Console/Other # Nintendo - SWITCH
     NDS: Console/NDS # Nintendo - NDS
     NGC: Console/Other # Nintendo - NGC
-    # 主机影视
-    PS3兼容高清: Console/PS3 # Video - HD - PS3
-    PSP兼容高清&标清: Console/PSP # Video - SD&HD - PSP
-    XBOX360兼容高清: Console/XBox 360 # Video - HD - XBOX360
+    # English
+    PS3EnglishHD: Console/PS3 # Video - HD - PS3
+    PSPEnglishHD&English: Console/PSP # Video - SD&HD - PSP
+    XBOX360EnglishHD: Console/XBox 360 # Video - HD - XBOX360
     Game+Video: Console/Other # Video - Game Video
-    # 软件
+    # Software
     APPZ: PC # Software - APPZ
     Game+Ebook: Books/EBook # Software - Game Ebook
     Ebook: Books/EBook # Software - Ebook
-    # 苹果系列
-    iPhone/iPad游戏: PC/Mobile-iOS # Apple - Game - iPhone/iPad
-    iPad书籍: Books/EBook # Apple - Book - iPad
-    iPhone/iPad软件: PC/Mobile-iOS # Apple - Software - iPhone/iPad
+    # English
+    iPhone/iPadGames: PC/Mobile-iOS # Apple - Game - iPhone/iPad
+    iPadEnglish: Books/EBook # Apple - Book - iPad
+    iPhone/iPadSoftware: PC/Mobile-iOS # Apple - Software - iPhone/iPad
 
   modes:
     search: [q]
@@ -115,7 +115,7 @@ search:
       inputs:
         c: G
   inputs:
-    search_field: "{{ range .Categories }}分类:`{{.}}` {{end}}{{ if .Query.IMDBID }}imdb{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}"
+    search_field: "{{ range .Categories }}English:`{{.}}` {{end}}{{ if .Query.IMDBID }}imdb{{ .Query.IMDBIDShort }}{{ else }}{{ .Keywords }}{{ end }}"
   rows:
     selector: table#torrent_table > tbody > tr[id]
 

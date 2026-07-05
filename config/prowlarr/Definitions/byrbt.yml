@@ -2,7 +2,7 @@
 id: byrbt
 name: BYRBT
 description: "BYRBT is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,16 +10,16 @@ links:
 
 caps:
   categorymappings:
-    - {id: 408, cat: Movies, desc: "电影Movies"}
-    - {id: 401, cat: TV, desc: "剧集TV Series"}
-    - {id: 404, cat: TV/Anime, desc: "动漫Animations"}
-    - {id: 402, cat: Audio, desc: "音乐Music"}
-    - {id: 405, cat: Other, desc: "综艺Arts"}
-    - {id: 403, cat: Console, desc: "游戏Games"}
-    - {id: 406, cat: PC, desc: "软件Software"}
-    - {id: 407, cat: TV/Documentary, desc: "资料Documentaries"}
-    - {id: 409, cat: TV/Sport, desc: "体育Sports"}
-    - {id: 410, cat: Other/Misc, desc: "纪录Records"}
+    - {id: 408, cat: Movies, desc: "MoviesMovies"}
+    - {id: 401, cat: TV, desc: "TV SeriesTV Series"}
+    - {id: 404, cat: TV/Anime, desc: "AnimeAnimations"}
+    - {id: 402, cat: Audio, desc: "MusicMusic"}
+    - {id: 405, cat: Other, desc: "TV ShowsArts"}
+    - {id: 403, cat: Console, desc: "GamesGames"}
+    - {id: 406, cat: PC, desc: "SoftwareSoftware"}
+    - {id: 407, cat: TV/Documentary, desc: "EnglishDocumentaries"}
+    - {id: 409, cat: TV/Sport, desc: "SportsSports"}
+    - {id: 410, cat: Other/Misc, desc: "DocumentaryRecords"}
 
   modes:
     search: [q]
@@ -69,7 +69,7 @@ login:
     password: "{{ .Config.password }}"
     autologin: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href^="logout.php?key="]

@@ -2,7 +2,7 @@
 id: torrentccf
 name: TorrentCCF
 description: "TorrentCCF (TCCF) is a CHINESE Private Torrent Tracker for HD MOVIES / TV"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -12,20 +12,20 @@ legacylinks:
 
 caps:
   categorymappings:
-    - {id: 622, cat: Movies, desc: "Movies.电影"}
-    - {id: 623, cat: TV, desc: "TV.电视剧"}
-    - {id: 624, cat: TV/Documentary, desc: "Documentaries.纪录片"}
-    - {id: 625, cat: PC, desc: "Appz.软件"}
-    - {id: 626, cat: Audio, desc: "Music & MusicVideos.音乐及MV"}
-    - {id: 627, cat: Other, desc: "Others.其他(非学习类)"}
-    - {id: 628, cat: Books/Other, desc: "Elearning - 杂项学习"}
-    - {id: 629, cat: Books/EBook, desc: "Elearning - 电子书/小说"}
-    - {id: 630, cat: Books/EBook, desc: "Elearning - 电子书/非小说"}
-    - {id: 631, cat: Books/Mags, desc: "Elearning - 杂志"}
-    - {id: 632, cat: Books/Comics, desc: "Elearning - 漫画"}
-    - {id: 633, cat: Audio/Audiobook, desc: "Elearning - 有声书"}
-    - {id: 634, cat: Books, desc: "Elearning - 公开课"}
-    - {id: 635, cat: Books, desc: "Elearning - 视频教程"}
+    - {id: 622, cat: Movies, desc: "Movies.Movies"}
+    - {id: 623, cat: TV, desc: "TV.TV Series"}
+    - {id: 624, cat: TV/Documentary, desc: "Documentaries.Documentary"}
+    - {id: 625, cat: PC, desc: "Appz.Software"}
+    - {id: 626, cat: Audio, desc: "Music & MusicVideos.MusicEnglishMV"}
+    - {id: 627, cat: Other, desc: "Others.Other(EnglishLearningEnglish)"}
+    - {id: 628, cat: Books/Other, desc: "Elearning - MiscLearning"}
+    - {id: 629, cat: Books/EBook, desc: "Elearning - E-Books"}
+    - {id: 630, cat: Books/EBook, desc: "Elearning - E-Books"}
+    - {id: 631, cat: Books/Mags, desc: "Elearning - English"}
+    - {id: 632, cat: Books/Comics, desc: "Elearning - Manga"}
+    - {id: 633, cat: Audio/Audiobook, desc: "Elearning - Audiobooks"}
+    - {id: 634, cat: Books, desc: "Elearning - English"}
+    - {id: 635, cat: Books, desc: "Elearning - English"}
 
   modes:
     search: [q]

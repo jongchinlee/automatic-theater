@@ -1,8 +1,8 @@
 ---
 id: ptchina
 name: PTChina
-description: "PTChina (铂金学院) is a CHINESE Private site for MOVIES / TV"
-language: zh-CN
+description: "PTChina  is a CHINESE Private site for MOVIES / TV"
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,9 +10,9 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies/电影"}
-    - {id: 402, cat: TV, desc: "TV Series/电视剧"}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries/纪录片"}
+    - {id: 401, cat: Movies, desc: "Movies/Movies"}
+    - {id: 402, cat: TV, desc: "TV Series/TV Series"}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries/Documentary"}
 
   modes:
     search: [q]
@@ -76,7 +76,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]
@@ -184,9 +184,9 @@ search:
       text: 86400
     description_verified:
       case:
-        span[title="通过"], span[title="通過"], span[title="Allowed"]: "Verified:"
-        span[title="未审"], span[title="未審"], span[title="Not reviewed"]: "Unverified:"
-        span[title="拒绝"], span[title="拒絕"], span[title="Denied"]: "Banned:"
+        span[title="Allowed"], span[title="Allowed"], span[title="Allowed"]: "Verified:"
+        span[title="Not reviewed"], span[title="Not reviewed"], span[title="Not reviewed"]: "Unverified:"
+        span[title="English"], span[title="English"], span[title="Denied"]: "Banned:"
     description:
       selector: td.rowfollow:nth-child(2)
       remove: a, b, font, img, span

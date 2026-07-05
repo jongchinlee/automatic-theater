@@ -2,7 +2,7 @@
 id: hddolby
 name: HDDolby
 description: "HD Dolby is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,17 +10,17 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies电影"}
-    - {id: 402, cat: TV, desc: "TV Series电视剧"}
-    - {id: 403, cat: TV, desc: "TV Shows综艺"}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries纪录片"}
-    - {id: 405, cat: TV/Anime, desc: "Animations动漫"}
+    - {id: 401, cat: Movies, desc: "MoviesMovies"}
+    - {id: 402, cat: TV, desc: "TV SeriesTV Series"}
+    - {id: 403, cat: TV, desc: "TV ShowsTV Shows"}
+    - {id: 404, cat: TV/Documentary, desc: "DocumentariesDocumentary"}
+    - {id: 405, cat: TV/Anime, desc: "AnimationsAnime"}
     - {id: 406, cat: Audio/Video, desc: "Music Videos"}
-    - {id: 407, cat: TV/Sport, desc: "Sports体育"}
-    - {id: 408, cat: Audio, desc: "HQ Audio音乐"}
-    - {id: 409, cat: Other, desc: "Others其他"}
-    - {id: 410, cat: PC/Games, desc: "Games游戏"}
-    - {id: 411, cat: Other, desc: "Study学习"}
+    - {id: 407, cat: TV/Sport, desc: "SportsSports"}
+    - {id: 408, cat: Audio, desc: "HQ AudioMusic"}
+    - {id: 409, cat: Other, desc: "OthersOther"}
+    - {id: 410, cat: PC/Games, desc: "GamesGames"}
+    - {id: 411, cat: Other, desc: "StudyLearning"}
 
   modes:
     search: [q]
@@ -88,7 +88,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
       message:
         selector: td.text
   test:
@@ -192,5 +192,5 @@ search:
       remove: a, b, font, img, span
       filters:
         - name: replace
-          args: [" 剩余时间：", ""]
+          args: [" Remaining time：", ""]
 # NexusPHP 985f0fc 2023-08-04

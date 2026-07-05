@@ -24,12 +24,12 @@
   <EnableEmbeddedTitles>false</EnableEmbeddedTitles>
   <EnableAudioResume>false</EnableAudioResume>
   <AutomaticRefreshIntervalDays>30</AutomaticRefreshIntervalDays>
-  <PreferredMetadataLanguage>zh-CN</PreferredMetadataLanguage>
-  <PreferredImageLanguage>zh-CN</PreferredImageLanguage>
+  <PreferredMetadataLanguage>en-US</PreferredMetadataLanguage>
+  <PreferredImageLanguage>en-US</PreferredImageLanguage>
   <ContentType>movies</ContentType>
-  <MetadataCountryCode>CN</MetadataCountryCode>
+  <MetadataCountryCode>US</MetadataCountryCode>
   <SeasonZeroDisplayName>Specials</SeasonZeroDisplayName>
-  <Name>🎞️ 电影 🎞️</Name>
+  <Name>Movies</Name>
   <MetadataSavers>
     <string>Nfo</string>
   </MetadataSavers>
@@ -51,9 +51,9 @@
   <SkipSubtitlesIfEmbeddedSubtitlesPresent>true</SkipSubtitlesIfEmbeddedSubtitlesPresent>
   <SkipSubtitlesIfAudioTrackMatches>false</SkipSubtitlesIfAudioTrackMatches>
   <SubtitleDownloadLanguages>
-    <string>zh-CN</string>
-    <string>zh-TW</string>
-    <string>zh-HK</string>
+    <string>en-US</string>
+    <string>en-US</string>
+    <string>en-US</string>
   </SubtitleDownloadLanguages>
   <SubtitleDownloadMaxAgeDays>30</SubtitleDownloadMaxAgeDays>
   <RequirePerfectSubtitleMatch>true</RequirePerfectSubtitleMatch>

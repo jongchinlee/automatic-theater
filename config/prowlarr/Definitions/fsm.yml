@@ -2,7 +2,7 @@
 id: fsm
 name: FSM
 description: "FSM is a CHINESE Private Torrent Tracker for 3X"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,14 +10,14 @@ links:
 
 caps:
   categorymappings:
-    - {id: 1, cat: XXX, desc: "日本AV"}
-    - {id: 2, cat: XXX, desc: "国产视频"}
-    - {id: 3, cat: XXX/ImageSet, desc: "写真"}
-    - {id: 4, cat: XXX/Other, desc: "黄油"}
-    - {id: 5, cat: XXX, desc: "里番"}
-    - {id: 6, cat: XXX/Other, desc: "黄色漫画"}
-    - {id: 7, cat: XXX, desc: "欧美视频"}
-    - {id: 8, cat: XXX, desc: "其他"}
+    - {id: 1, cat: XXX, desc: "JapanAV"}
+    - {id: 2, cat: XXX, desc: "DomesticEnglish"}
+    - {id: 3, cat: XXX/ImageSet, desc: "Photo Set"}
+    - {id: 4, cat: XXX/Other, desc: "English"}
+    - {id: 5, cat: XXX, desc: "English"}
+    - {id: 6, cat: XXX/Other, desc: "EnglishManga"}
+    - {id: 7, cat: XXX, desc: "WesternEnglish"}
+    - {id: 8, cat: XXX, desc: "Other"}
 
   modes:
     search: [q]
@@ -95,17 +95,17 @@ search:
       selector: createdAt
       filters:
         - name: replace
-          args: ["年", "years"]
+          args: ["English", "years"]
         - name: replace
-          args: ["月", "months"]
+          args: ["English", "months"]
         - name: replace
-          args: ["天", "days"]
+          args: ["English", "days"]
         - name: re_replace
-          args: ["小?时", "hours"]
+          args: ["English?English", "hours"]
         - name: replace
-          args: ["分", "minutes"]
+          args: ["English", "minutes"]
         - name: replace
-          args: ["前", " ago"]
+          args: ["English", " ago"]
         - name: timeago
     size:
       selector: fileSize

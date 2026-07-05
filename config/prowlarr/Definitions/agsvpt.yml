@@ -2,7 +2,7 @@
 id: agsvpt
 name: AGSVPT
 description: "AGSVPT (Arctic Global Seed Vault) is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 requestDelay: 2
@@ -11,23 +11,23 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movie(电影)", default: true}
-    - {id: 402, cat: TV, desc: "TV Series(电视剧)", default: true}
-    - {id: 403, cat: TV, desc: "TV Shows(综艺)", default: true}
-    - {id: 405, cat: TV/Anime, desc: "Anime(动漫)", default: true}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries(纪录片)", default: true}
-    - {id: 419, cat: TV, desc: "Playlet（短剧）", default: true}
-    - {id: 411, cat: Audio, desc: "Music(音乐)）", default: true}
-    - {id: 406, cat: Audio/Video, desc: "MV(演唱", default: true}
-    - {id: 407, cat: TV/Sport, desc: "Sports(体育)", default: true}
-    - {id: 408, cat: Audio/Audiobook, desc: "Audio(音频)", default: true}
+    - {id: 401, cat: Movies, desc: "Movie(Movies)", default: true}
+    - {id: 402, cat: TV, desc: "TV Series(TV Series)", default: true}
+    - {id: 403, cat: TV, desc: "TV Shows(TV Shows)", default: true}
+    - {id: 405, cat: TV/Anime, desc: "Anime(Anime)", default: true}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries(Documentary)", default: true}
+    - {id: 419, cat: TV, desc: "Playlet（English）", default: true}
+    - {id: 411, cat: Audio, desc: "Music(Music)）", default: true}
+    - {id: 406, cat: Audio/Video, desc: "MV(English", default: true}
+    - {id: 407, cat: TV/Sport, desc: "Sports(Sports)", default: true}
+    - {id: 408, cat: Audio/Audiobook, desc: "Audio(Audio)", default: true}
     # special
-    - {id: 413, cat: PC/Games, desc: "Game(游戏)", default: false}
-    - {id: 416, cat: Books/Comics, desc: "Comic(漫画)", default: false}
-    - {id: 412, cat: PC/0day, desc: "Software(软件)", default: false}
-    - {id: 418, cat: Other, desc: "Picture(图片)", default: false}
-    - {id: 415, cat: Books/EBook, desc: "E-Book(电子书/有声书)", default: false}
-    - {id: 417, cat: Other, desc: "Education(学习资料)", default: false}
+    - {id: 413, cat: PC/Games, desc: "Game(Games)", default: false}
+    - {id: 416, cat: Books/Comics, desc: "Comic(Manga)", default: false}
+    - {id: 412, cat: PC/0day, desc: "Software(Software)", default: false}
+    - {id: 418, cat: Other, desc: "Picture", default: false}
+    - {id: 415, cat: Books/EBook, desc: "E-Book(E-Books/Audiobooks)", default: false}
+    - {id: 417, cat: Other, desc: "Education(LearningEnglish)", default: false}
 
   modes:
     search: [q]
@@ -73,7 +73,7 @@ settings:
   - name: info_tpp
     type: info
     label: Results Per Page
-    default: For best results, change the <b>每页种子数:每页显示</b><i>(Torrents per page:)</i> setting to <b>100</b> on your account profile.
+    default: For best results, change the <b>English:English</b><i>(Torrents per page:)</i> setting to <b>100</b> on your account profile.
 
 login:
   path: agsvpt
@@ -89,7 +89,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
       message:
         selector: td.text
   test:
@@ -193,9 +193,9 @@ search:
       text: 259200
     description_verified:
       case:
-        span[title="通过"]: "Verified:"
-        span[title="未审"]: "Unverified:"
-        span[title="拒绝"]: "Banned:"
+        span[title="Allowed"]: "Verified:"
+        span[title="Not reviewed"]: "Unverified:"
+        span[title="English"]: "Banned:"
     description:
       selector: td.rowfollow:nth-child(2)
       remove: a, b, font, img, span

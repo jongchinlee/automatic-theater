@@ -2,7 +2,7 @@
 id: ydypt
 name: YDYPT
 description: "YDYPT is a CHINESE Private Torrent Tracker for MOVIES / TV / 3X"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,18 +10,18 @@ links:
 
 caps:
   categorymappings:
-    - {id: 420, cat: Movies/BluRay, desc: "电影BluRay Movies"}
-    - {id: 423, cat: Movies/HD, desc: "电影HD Movies"}
-    - {id: 424, cat: TV/HD, desc: "剧集BluRay TV"}
-    - {id: 421, cat: TV/HD, desc: "剧集HD TV"}
-    - {id: 506, cat: XXX, desc: "有码censured BluRay 3X"}
-    - {id: 500, cat: XXX, desc: "有码censured HD 3X"}
-    - {id: 507, cat: XXX, desc: "无码uncensured BluRay 3X"}
-    - {id: 501, cat: XXX, desc: "无码uncensured HD 3X"}
-    - {id: 503, cat: XXX, desc: "欧美Euro&USA 3X"}
-    - {id: 502, cat: XXX, desc: "国产自拍Homemade 3X"}
-    - {id: 509, cat: XXX, desc: "里番H-Anime"}
-    - {id: 422, cat: XXX, desc: "其他Other 3X"}
+    - {id: 420, cat: Movies/BluRay, desc: "MoviesBluRay Movies"}
+    - {id: 423, cat: Movies/HD, desc: "MoviesHD Movies"}
+    - {id: 424, cat: TV/HD, desc: "TV SeriesBluRay TV"}
+    - {id: 421, cat: TV/HD, desc: "TV SeriesHD TV"}
+    - {id: 506, cat: XXX, desc: "Englishcensured BluRay 3X"}
+    - {id: 500, cat: XXX, desc: "Englishcensured HD 3X"}
+    - {id: 507, cat: XXX, desc: "Englishuncensured BluRay 3X"}
+    - {id: 501, cat: XXX, desc: "Englishuncensured HD 3X"}
+    - {id: 503, cat: XXX, desc: "WesternEuro&USA 3X"}
+    - {id: 502, cat: XXX, desc: "DomesticEnglishHomemade 3X"}
+    - {id: 509, cat: XXX, desc: "EnglishH-Anime"}
+    - {id: 422, cat: XXX, desc: "OtherOther 3X"}
 
   modes:
     search: [q]
@@ -69,7 +69,7 @@ login:
     logout: forever
     securelogin: ""
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href*="logout.php"]

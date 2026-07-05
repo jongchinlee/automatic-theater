@@ -2,7 +2,7 @@
 id: hdsky
 name: HDSky
 description: "HDSky is a CHINESE Private Torrent Tracker for HD MOVIES / TV"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,21 +10,21 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies/电影"}
-    - {id: 402, cat: TV, desc: "TV Series/剧集(分集)"}
-    - {id: 403, cat: TV, desc: "TV Shows/综艺"}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries/纪录片"}
-    - {id: 405, cat: TV/Anime, desc: "Animations/动漫"}
-    - {id: 406, cat: Audio/Video, desc: "Music Videos/音乐MV"}
-    - {id: 407, cat: TV/Sport, desc: "Sports/体育"}
-    - {id: 408, cat: Audio, desc: "HQ Audio/无损音乐"}
-    - {id: 409, cat: Other, desc: "Misc/其他"}
-    - {id: 410, cat: Movies, desc: "iPad/iPad影视"}
-    - {id: 411, cat: TV, desc: "TV Series/剧集(合集)"}
-    - {id: 412, cat: TV, desc: "TV Series/海外剧集(分集)"}
-    - {id: 413, cat: TV, desc: "TV Series/海外剧集(合集)"}
-    - {id: 414, cat: TV, desc: "TV Shows/海外综艺(分集)"}
-    - {id: 415, cat: TV, desc: "TV Shows/海外综艺(合集)"}
+    - {id: 401, cat: Movies, desc: "Movies/Movies"}
+    - {id: 402, cat: TV, desc: "TV Series/TV Series"}
+    - {id: 403, cat: TV, desc: "TV Shows/TV Shows"}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries/Documentary"}
+    - {id: 405, cat: TV/Anime, desc: "Animations/Anime"}
+    - {id: 406, cat: Audio/Video, desc: "Music Videos/MusicMV"}
+    - {id: 407, cat: TV/Sport, desc: "Sports/Sports"}
+    - {id: 408, cat: Audio, desc: "HQ Audio/EnglishMusic"}
+    - {id: 409, cat: Other, desc: "Misc/Other"}
+    - {id: 410, cat: Movies, desc: "iPad/iPadEnglish"}
+    - {id: 411, cat: TV, desc: "TV Series/TV Series"}
+    - {id: 412, cat: TV, desc: "TV Series/EnglishTV Series"}
+    - {id: 413, cat: TV, desc: "TV Series/EnglishTV Series"}
+    - {id: 414, cat: TV, desc: "TV Shows/EnglishTV Shows"}
+    - {id: 415, cat: TV, desc: "TV Shows/EnglishTV Shows"}
 
   modes:
     search: [q]

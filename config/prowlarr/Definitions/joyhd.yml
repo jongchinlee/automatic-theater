@@ -2,7 +2,7 @@
 id: joyhd
 name: JoyHD
 description: "JoyHD (JHD) is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,17 +10,17 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "电影Movies"}
-    - {id: 402, cat: TV, desc: "剧集TV Series"}
-    - {id: 403, cat: TV/Other, desc: "综艺TV Shows"}
-    - {id: 405, cat: TV/Anime, desc: "动漫Animations"}
-    - {id: 414, cat: Audio, desc: "音乐Music"}
-    - {id: 407, cat: TV/Sport, desc: "体育Sports"}
-    - {id: 404, cat: TV/Documentary, desc: "纪录片Documentaries"}
-    - {id: 406, cat: Audio/Video, desc: "音乐视频Music Videos"}
-    - {id: 410, cat: PC/Games, desc: "游戏Game"}
-    - {id: 411, cat: Other, desc: "学习Study"}
-    - {id: 409, cat: Other, desc: "其他Misc"}
+    - {id: 401, cat: Movies, desc: "MoviesMovies"}
+    - {id: 402, cat: TV, desc: "TV SeriesTV Series"}
+    - {id: 403, cat: TV/Other, desc: "TV ShowsTV Shows"}
+    - {id: 405, cat: TV/Anime, desc: "AnimeAnimations"}
+    - {id: 414, cat: Audio, desc: "MusicMusic"}
+    - {id: 407, cat: TV/Sport, desc: "SportsSports"}
+    - {id: 404, cat: TV/Documentary, desc: "DocumentaryDocumentaries"}
+    - {id: 406, cat: Audio/Video, desc: "MusicEnglishMusic Videos"}
+    - {id: 410, cat: PC/Games, desc: "GamesGame"}
+    - {id: 411, cat: Other, desc: "LearningStudy"}
+    - {id: 409, cat: Other, desc: "OtherMisc"}
 
   modes:
     search: [q]
@@ -70,7 +70,7 @@ login:
     password: "{{ .Config.password }}"
     dutime: month
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

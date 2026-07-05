@@ -1,8 +1,8 @@
 ---
 id: haresclub
 name: Hares Club
-description: "Hares Club (白兔俱乐部) is a CHINESE site that focuses on 4K media."
-language: zh-CN
+description: "Hares Club  is a CHINESE site that focuses on 4K media."
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,16 +10,16 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies | 电影"}
-    - {id: 402, cat: TV, desc: "TV Series | 电视剧"}
-    - {id: 403, cat: TV, desc: "TV Shows | 综艺"}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries | 纪录片"}
-    - {id: 405, cat: TV/Anime, desc: "Animations | 动漫"}
-    - {id: 406, cat: Audio/Video, desc: "Music Videos | 音乐视频"}
-    - {id: 407, cat: TV/Sport, desc: "Sports | 体育"}
-    - {id: 409, cat: Audio/Video, desc: "Concert | 演唱会"}
-    - {id: 416, cat: TV, desc: "Show LIVE | 现场LIVE"}
-    - {id: 415, cat: Other, desc: "Others | 其他"}
+    - {id: 401, cat: Movies, desc: "Movies | Movies"}
+    - {id: 402, cat: TV, desc: "TV Series | TV Series"}
+    - {id: 403, cat: TV, desc: "TV Shows | TV Shows"}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries | Documentary"}
+    - {id: 405, cat: TV/Anime, desc: "Animations | Anime"}
+    - {id: 406, cat: Audio/Video, desc: "Music Videos | MusicEnglish"}
+    - {id: 407, cat: TV/Sport, desc: "Sports | Sports"}
+    - {id: 409, cat: Audio/Video, desc: "Concert | English"}
+    - {id: 416, cat: TV, desc: "Show LIVE | EnglishLIVE"}
+    - {id: 415, cat: Other, desc: "Others | Other"}
 
   modes:
     search: [q]
@@ -84,12 +84,12 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: script:contains("'失败'")
+    - selector: script:contains("'Failed'")
       message:
-        text: "图片代码无效！The Image code is invalid. Close the config and start again."
-    - selector: script:contains("'登录失败！'")
+        text: "English！The Image code is invalid. Close the config and start again."
+    - selector: script:contains("'EnglishFailed！'")
       message:
-        text: "用户名或密码不正确！或者你还没有通过验证。The username or password is incorrect! Close the config and start again."
+        text: "English！EnglishAllowedEnglish。The username or password is incorrect! Close the config and start again."
   test:
     path: index.php
     selector: a[href*="logout.php"]

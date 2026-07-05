@@ -2,7 +2,7 @@
 id: tlfbits
 name: TLFBits
 description: "TLFBits is a CHINESE Private Torrent Tracker for HD MOVIES / TV"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,18 +10,18 @@ links:
 
 caps:
   categorymappings:
-    - {id: 438, cat: Movies, desc: "电影 (Movie)"}
-    - {id: 440, cat: TV, desc: "电视剧(TV series)"}
-    - {id: 441, cat: TV, desc: "综艺 (TV Show)"}
-    - {id: 442, cat: TV/Anime, desc: "动漫 (Anime)"}
-    - {id: 443, cat: TV/Documentary, desc: "纪录片 (Documentary)"}
-    - {id: 444, cat: TV/Sport, desc: "体育 (Sport)"}
-    - {id: 445, cat: Audio/Video, desc: "音乐视频 (Music Video)"}
-    - {id: 446, cat: Audio, desc: "音乐(Music)"}
-    - {id: 447, cat: PC/Games, desc: "游戏 (Game)"}
-    - {id: 448, cat: PC/0day, desc: "软件 (Software)"}
-    - {id: 449, cat: Other/Misc, desc: "资料（E-Learning）"}
-    - {id: 450, cat: Other, desc: "其它 (Other)"}
+    - {id: 438, cat: Movies, desc: "Movies (Movie)"}
+    - {id: 440, cat: TV, desc: "TV Series(TV series)"}
+    - {id: 441, cat: TV, desc: "TV Shows (TV Show)"}
+    - {id: 442, cat: TV/Anime, desc: "Anime (Anime)"}
+    - {id: 443, cat: TV/Documentary, desc: "Documentary (Documentary)"}
+    - {id: 444, cat: TV/Sport, desc: "Sports (Sport)"}
+    - {id: 445, cat: Audio/Video, desc: "MusicEnglish (Music Video)"}
+    - {id: 446, cat: Audio, desc: "Music(Music)"}
+    - {id: 447, cat: PC/Games, desc: "Games (Game)"}
+    - {id: 448, cat: PC/0day, desc: "Software (Software)"}
+    - {id: 449, cat: Other/Misc, desc: "English（E-Learning）"}
+    - {id: 450, cat: Other, desc: "English (Other)"}
 
   modes:
     search: [q]
@@ -77,7 +77,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

@@ -2,7 +2,7 @@
 id: dmhy
 name: dmhy
 description: "dmhy is a TAIWANESE Public magnet tracker for ANIME"
-language: zh-TW
+language: en-US
 type: public
 encoding: UTF-8
 links:
@@ -10,28 +10,28 @@ links:
 
 caps:
   categorymappings:
-    - {id: 2, cat: TV/Anime, desc: "動畫 (Anime)"}
-    - {id: 31, cat: TV/Anime, desc: "季度全集 (Quarterly Complete)"}
-    - {id: 3, cat: Books/Comics, desc: "漫畫 (Manga)"}
-    - {id: 41, cat: TV, desc: "港台原版 (Hong Kong and Taiwan original)"}
-    - {id: 42, cat: TV, desc: "日文原版 (Japanese original)"}
-    - {id: 4, cat: Audio, desc: "音樂 (Music)"}
-    - {id: 43, cat: Audio, desc: "動漫音樂 (Anime Music)"}
-    - {id: 44, cat: Audio, desc: "同人音樂 (Fan Music)"}
-    - {id: 15, cat: Audio, desc: "流行音樂 (Pop Music)"}
-    - {id: 6, cat: TV, desc: "日劇 (Japanese TV drama)"}
+    - {id: 2, cat: TV/Anime, desc: "Anime (Anime)"}
+    - {id: 31, cat: TV/Anime, desc: "English (Quarterly Complete)"}
+    - {id: 3, cat: Books/Comics, desc: "Manga (Manga)"}
+    - {id: 41, cat: TV, desc: "English (Hong Kong and Taiwan original)"}
+    - {id: 42, cat: TV, desc: "English (Japanese original)"}
+    - {id: 4, cat: Audio, desc: "Music (Music)"}
+    - {id: 43, cat: Audio, desc: "EnglishMusic (Anime Music)"}
+    - {id: 44, cat: Audio, desc: "EnglishMusic (Fan Music)"}
+    - {id: 15, cat: Audio, desc: "EnglishMusic (Pop Music)"}
+    - {id: 6, cat: TV, desc: "English (Japanese TV drama)"}
     - {id: 7, cat: TV/Anime, desc: "RAW"}
-    - {id: 9, cat: PC/Games, desc: "遊戲 (games)"}
-    - {id: 17, cat: PC/Games, desc: "電腦遊戲 (computer games)"}
-    - {id: 18, cat: Console, desc: "電視遊戲 (video games)"}
-    - {id: 19, cat: Console, desc: "掌機遊戲 (console games)"}
-    - {id: 20, cat: Console, desc: "網絡遊戲 (online games)"}
-    - {id: 21, cat: Console, desc: "遊戲周邊 (game periphery)"}
-    - {id: 12, cat: Other/Misc, desc: "特攝 (special photo)"}
-    - {id: 1, cat: Other, desc: "其他 (other)"}
+    - {id: 9, cat: PC/Games, desc: "English (games)"}
+    - {id: 17, cat: PC/Games, desc: "English (computer games)"}
+    - {id: 18, cat: Console, desc: "English (video games)"}
+    - {id: 19, cat: Console, desc: "English (console games)"}
+    - {id: 20, cat: Console, desc: "English (online games)"}
+    - {id: 21, cat: Console, desc: "English (game periphery)"}
+    - {id: 12, cat: Other/Misc, desc: "English (special photo)"}
+    - {id: 1, cat: Other, desc: "Other (other)"}
     # Anime as Movies (Radarr uses t=movie):
-    - {id: 2, cat: Movies/Other, desc: "動畫 (Anime)"}
-    - {id: 31, cat: Movies/Other, desc: "季度全集 (Quarterly Complete)"}
+    - {id: 2, cat: Movies/Other, desc: "Anime (Anime)"}
+    - {id: 31, cat: Movies/Other, desc: "English (Quarterly Complete)"}
     - {id: 7, cat: Movies/Other, desc: "RAW"}
 
   modes:

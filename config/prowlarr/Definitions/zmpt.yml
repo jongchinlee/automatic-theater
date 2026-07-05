@@ -1,8 +1,8 @@
 ---
 id: zmpt
-name: ZmPT (织梦)
-description: "ZmPT (织梦) is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
-language: zh-CN
+name: ZmPT
+description: "ZmPT  is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,20 +10,20 @@ links:
 
 caps:
   categorymappings:
-    - {id: 421, cat: TV/Anime, desc: "Anime Other/动漫-其他"}
-    - {id: 420, cat: TV/Anime, desc: "Anime Europe and America/动漫-欧美"}
-    - {id: 419, cat: TV/Anime, desc: "Anime Korean/动漫-韩漫"}
-    - {id: 418, cat: TV/Anime, desc: "Anime Japan/动漫-日漫"}
-    - {id: 417, cat: TV/Anime, desc: "Anime China/动漫-国漫"}
-    - {id: 409, cat: Other, desc: "Misc/综合-其他"}
-    - {id: 403, cat: TV, desc: "TV Shows/综合-综艺"}
-    - {id: 402, cat: TV, desc: "TV Series/综合-电视剧"}
-    - {id: 422, cat: TV/Documentary, desc: "Documentaries/综合-纪录片"}
-    - {id: 401, cat: Movies, desc: "Movies/综合-电影"}
-    - {id: 423, cat: Audio, desc: "Music/声音类-音乐"}
-    - {id: 424, cat: Audio/Audiobook, desc: "Music Audiobooks/声音类-有声书"}
-    - {id: 425, cat: PC, desc: "Software/软件游戏-软件"}
-    - {id: 426, cat: Console, desc: "Games/软件游戏-游戏"}
+    - {id: 421, cat: TV/Anime, desc: "Anime Other/Anime-Other"}
+    - {id: 420, cat: TV/Anime, desc: "Anime Europe and America/Anime-Western"}
+    - {id: 419, cat: TV/Anime, desc: "Anime Korean/Anime-English"}
+    - {id: 418, cat: TV/Anime, desc: "Anime Japan/Anime-English"}
+    - {id: 417, cat: TV/Anime, desc: "Anime China/Anime-English"}
+    - {id: 409, cat: Other, desc: "Misc/English-Other"}
+    - {id: 403, cat: TV, desc: "TV Shows/English-TV Shows"}
+    - {id: 402, cat: TV, desc: "TV Series/English-TV Series"}
+    - {id: 422, cat: TV/Documentary, desc: "Documentaries/English-Documentary"}
+    - {id: 401, cat: Movies, desc: "Movies/English-Movies"}
+    - {id: 423, cat: Audio, desc: "Music/English-Music"}
+    - {id: 424, cat: Audio/Audiobook, desc: "Music Audiobooks/English-Audiobooks"}
+    - {id: 425, cat: PC, desc: "Software/SoftwareGames-Software"}
+    - {id: 426, cat: Console, desc: "Games/SoftwareGames-Games"}
 
   modes:
     search: [q]
@@ -176,9 +176,9 @@ search:
         "*": 86400
     description_verified:
       case:
-        span[title="通过"], span[title="通過"], span[title="Allowed"]: "Verified:"
-        span[title="未审"], span[title="未審"], span[title="Not reviewed"]: "Unverified:"
-        span[title="拒绝"], span[title="拒絕"], span[title="Denied"]: "Banned:"
+        span[title="Allowed"], span[title="Allowed"], span[title="Allowed"]: "Verified:"
+        span[title="Not reviewed"], span[title="Not reviewed"], span[title="Not reviewed"]: "Unverified:"
+        span[title="English"], span[title="English"], span[title="Denied"]: "Banned:"
     description:
       selector: td.rowfollow:nth-child(2)
       remove: a, b, font, img, span

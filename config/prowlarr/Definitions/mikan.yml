@@ -2,7 +2,7 @@
 id: mikan
 name: Mikan
 description: "Mikan is a CHINESE Public torrent tracker for ANIME"
-language: zh-CN
+language: en-US
 type: public
 encoding: UTF-8
 links:
@@ -41,13 +41,13 @@ search:
       selector: a[data-clipboard-text]
       attribute: data-clipboard-text
     date_day:
-      selector: td:nth-child(1):contains("今天"), td:nth-child(1):contains("昨天")
+      selector: td:nth-child(1):contains("Today"), td:nth-child(1):contains("Yesterday")
       optional: true
       filters:
         - name: replace
-          args: ["昨天", "Yesterday"]
+          args: ["Yesterday", "Yesterday"]
         - name: replace
-          args: ["今天", "Today"]
+          args: ["Today", "Today"]
         - name: fuzzytime
     date_year:
       selector: td:nth-child(3):not(:has(a))

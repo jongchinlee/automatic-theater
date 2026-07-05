@@ -2,7 +2,7 @@
 id: 3wmg
 name: 3Wmg
 description: "3Wmg is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 requestDelay: 2
@@ -11,22 +11,22 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies/电影", default: true}
-    - {id: 402, cat: TV, desc: "TV Series/电视剧", default: true}
-    - {id: 403, cat: TV, desc: "TV Shows/综艺", default: true}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries/纪录片", default: true}
-    - {id: 405, cat: TV/Anime, desc: "Animations/动漫", default: true}
-    - {id: 406, cat: Audio, desc: "Music/音乐", default: true}
-    - {id: 407, cat: Other/Misc, desc: "Leanrning学习", default: true}
-    - {id: 409, cat: Books, desc: "Ebook电子书", default: true}
-    - {id: 410, cat: Other, desc: "Misc/其他", default: true}
+    - {id: 401, cat: Movies, desc: "Movies/Movies", default: true}
+    - {id: 402, cat: TV, desc: "TV Series/TV Series", default: true}
+    - {id: 403, cat: TV, desc: "TV Shows/TV Shows", default: true}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries/Documentary", default: true}
+    - {id: 405, cat: TV/Anime, desc: "Animations/Anime", default: true}
+    - {id: 406, cat: Audio, desc: "Music/Music", default: true}
+    - {id: 407, cat: Other/Misc, desc: "LeanrningLearning", default: true}
+    - {id: 409, cat: Books, desc: "EbookE-Books", default: true}
+    - {id: 410, cat: Other, desc: "Misc/Other", default: true}
     # special
-    - {id: 411, cat: XXX, desc: "Uncensored无码", default: false}
-    - {id: 412, cat: XXX, desc: "Censored有码", default: false}
-    - {id: 413, cat: XXX, desc: "Lgbt同志", default: false}
-    - {id: 414, cat: XXX, desc: "III三级、写真", default: false}
-    - {id: 415, cat: XXX, desc: "Animations动漫", default: false}
-    - {id: 416, cat: XXX, desc: "Other其他", default: false}
+    - {id: 411, cat: XXX, desc: "UncensoredEnglish", default: false}
+    - {id: 412, cat: XXX, desc: "CensoredEnglish", default: false}
+    - {id: 413, cat: XXX, desc: "LgbtEnglish", default: false}
+    - {id: 414, cat: XXX, desc: "IIIEnglish、Photo Set", default: false}
+    - {id: 415, cat: XXX, desc: "AnimationsAnime", default: false}
+    - {id: 416, cat: XXX, desc: "OtherOther", default: false}
 
   modes:
     search: [q]
@@ -91,8 +91,8 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失敗"))
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("English"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

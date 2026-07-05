@@ -2,7 +2,7 @@
 id: azusa
 name: Azusa
 description: "Azusa is a CHINESE Torrent Tracker focusing on Comics"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -78,7 +78,7 @@ login:
     ssl: yes
     trackerssl: ""
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

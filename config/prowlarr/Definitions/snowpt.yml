@@ -2,7 +2,7 @@
 id: snowpt
 name: SnowPT
 description: "SnowPT (SSPT) is a CHINESE Private Torrent Tracker for ANIME"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -39,7 +39,7 @@ login:
     password: "{{ .Config.password }}"
     cookietime: 2592000
   error:
-    - selector: div#messagetext:contains("登录失败") p
+    - selector: div#messagetext:contains("EnglishFailed") p
   test:
     path: /
     selector: a[href*="action=logout&formhash="]

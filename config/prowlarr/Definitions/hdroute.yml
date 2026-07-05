@@ -2,7 +2,7 @@
 id: hdroute
 name: HDRoute
 description: "HDRoute is a CHINESE Private Torrent Tracker for HD MOVIES / TV"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,15 +10,15 @@ links:
 
 caps:
   categorymappings:
-    - {id: 1, cat: Movies, desc: "电影 (Movies)"}
-    - {id: 2, cat: TV/Documentary, desc: "演示/纪录片 (Demo/Docu)"}
-    - {id: 3, cat: TV, desc: "连续剧 (TV)"}
-    - {id: 4, cat: TV/Anime, desc: "动画片 (Animation)"}
-    - {id: 5, cat: Audio/Video, desc: "演唱会/MV (Music Video)"}
-    - {id: 6, cat: TV/Sport, desc: "体育节目 (Sports)"}
-    - {id: 7, cat: Audio/Other, desc: "电影音轨 (Soundtracks"}
-    - {id: 8, cat: Audio/Lossless, desc: "无损音乐 (Lossless)"}
-    - {id: 9, cat: Other, desc: "其他 (Other)"}
+    - {id: 1, cat: Movies, desc: "Movies (Movies)"}
+    - {id: 2, cat: TV/Documentary, desc: "English/Documentary (Demo/Docu)"}
+    - {id: 3, cat: TV, desc: "TV Series (TV)"}
+    - {id: 4, cat: TV/Anime, desc: "Anime (Animation)"}
+    - {id: 5, cat: Audio/Video, desc: "English/MV (Music Video)"}
+    - {id: 6, cat: TV/Sport, desc: "SportsEnglish (Sports)"}
+    - {id: 7, cat: Audio/Other, desc: "MoviesAudio Track (Soundtracks"}
+    - {id: 8, cat: Audio/Lossless, desc: "EnglishMusic (Lossless)"}
+    - {id: 9, cat: Other, desc: "Other (Other)"}
   modes:
     search: [q]
     tv-search: [q, season, ep, imdbid]
@@ -32,8 +32,8 @@ login:
     username: "{{ .Config.username }}"
     password: "{{ .Config.password }}"
   error:
-    - selector: :contains("用户不存在")
-    - selector: :contains("密码错误")
+    - selector: :contains("English")
+    - selector: :contains("English")
   test:
     path: index.php
     selector: a[href="logout.php"]

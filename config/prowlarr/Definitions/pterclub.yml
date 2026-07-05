@@ -2,7 +2,7 @@
 id: pterclub
 name: PTerClub
 description: "PTerClub is a CHINESE Private Torrent Tracker for HD MUSIC VIDEOS, MOVIES, TV & ANIME"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,20 +10,20 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "电影 (Movie)"}
-    - {id: 404, cat: TV, desc: "电视剧 (TV Play)"}
-    - {id: 403, cat: TV/Anime, desc: "动漫 (Anime)"}
-    - {id: 405, cat: TV, desc: "综艺 (TV Show)"}
-    - {id: 413, cat: Audio/Video, desc: "音乐短片 (MV)"}
-    - {id: 418, cat: Audio/Video, desc: "舞台演出(Stage Performance)"}
-    - {id: 406, cat: Audio, desc: "音乐 (Music)"}
-    - {id: 402, cat: TV/Documentary, desc: "纪录片 (Documentary)"}
-    - {id: 407, cat: TV/Sport, desc: "体育 (Sport)"}
-    - {id: 408, cat: Books, desc: "电子书 (Ebook)"}
-    - {id: 409, cat: Console, desc: "游戏 (Game)"}
-    - {id: 410, cat: PC, desc: "软件 (Software)"}
-    - {id: 411, cat: Other, desc: "学习 (Study)"}
-    - {id: 412, cat: Other, desc: "其它 (Other)"}
+    - {id: 401, cat: Movies, desc: "Movies (Movie)"}
+    - {id: 404, cat: TV, desc: "TV Series (TV Play)"}
+    - {id: 403, cat: TV/Anime, desc: "Anime (Anime)"}
+    - {id: 405, cat: TV, desc: "TV Shows (TV Show)"}
+    - {id: 413, cat: Audio/Video, desc: "MusicEnglish (MV)"}
+    - {id: 418, cat: Audio/Video, desc: "English(Stage Performance)"}
+    - {id: 406, cat: Audio, desc: "Music (Music)"}
+    - {id: 402, cat: TV/Documentary, desc: "Documentary (Documentary)"}
+    - {id: 407, cat: TV/Sport, desc: "Sports (Sport)"}
+    - {id: 408, cat: Books, desc: "E-Books (Ebook)"}
+    - {id: 409, cat: Console, desc: "Games (Game)"}
+    - {id: 410, cat: PC, desc: "Software (Software)"}
+    - {id: 411, cat: Other, desc: "Learning (Study)"}
+    - {id: 412, cat: Other, desc: "English (Other)"}
 
   modes:
     search: [q]

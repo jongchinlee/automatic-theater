@@ -193,7 +193,7 @@ search:
         - name: replace
           args: ["/ESP", "/SPANiSH"]
         - name: re_replace
-          args: ["\\/[EI]NG", "/English"]
+          args: ["\\/[EI]NG", ""]
         - name: replace
           args: ["/CAT", "/Catalan"]
         - name: re_replace

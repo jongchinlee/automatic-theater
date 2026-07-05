@@ -2,7 +2,7 @@
 id: miobt
 name: MioBT
 description: "MioBT is a CHINESE Public torrent index"
-language: zh-CN
+language: en-US
 type: public
 encoding: UTF-8
 links:
@@ -11,11 +11,11 @@ links:
 
 caps:
   categorymappings:
-    - {id: 动画, cat: TV/Anime, desc: 动画 (Animation Series and Movies)}
-    - {id: 漫画, cat: Books/Comics, desc: 漫画 (Comics and Manga)}
-    - {id: 音乐, cat: Audio, desc: 音乐 (Music OST and Singles)}
-    - {id: 周边, cat: TV/Other, desc: 周边 (Live Action)}
-    - {id: 其它, cat: TV/Anime, desc: 其它 (Other)}
+    - {id: Anime, cat: TV/Anime, desc: Anime (Animation Series and Movies)}
+    - {id: Manga, cat: Books/Comics, desc: Manga (Comics and Manga)}
+    - {id: Music, cat: Audio, desc: Music (Music OST and Singles)}
+    - {id: English, cat: TV/Other, desc: English (Live Action)}
+    - {id: English, cat: TV/Anime, desc: English (Other)}
     - {id: Raw, cat: TV/Anime, desc: Raw}
 
   modes:
@@ -50,29 +50,29 @@ search:
         - name: regexp
           args: show-([0-9A-Fa-f]{40})
     date_today:
-       # 今天 00:35	 (Today)
+       # Today 00:35	 (Today)
       optional: true
-      selector: td:nth-child(1):contains("今天")
+      selector: td:nth-child(1):contains("Today")
       filters:
         - name: replace
-          args: ["今天", "Today"]
+          args: ["Today", "Today"]
         - name: append
           args: " +08:00" # CST
         - name: fuzzytime
     date_yday:
-      # 昨天 22:50	 (Yesterday)
+      # Yesterday 22:50	 (Yesterday)
       optional: true
-      selector: td:nth-child(1):contains("昨天")
+      selector: td:nth-child(1):contains("Yesterday")
       filters:
         - name: replace
-          args: ["昨天", "Yesterday"]
+          args: ["Yesterday", "Yesterday"]
         - name: append
           args: " +08:00" # CST
         - name: fuzzytime
     date_year:
       # 2020/12/24
       optional: true
-      selector: td:nth-child(1):not(:contains("昨天")):not(:contains("今天"))
+      selector: td:nth-child(1):not(:contains("Yesterday")):not(:contains("Today"))
       filters:
         - name: append
           args: " +08:00" # CST

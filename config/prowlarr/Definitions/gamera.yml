@@ -1,8 +1,8 @@
 ---
 id: gamera
 name: Gamera
-description: "Gamera (駕瞑羅) is a CHINESE Private Torrent Tracker for Japanese Monster and Superhero MOVIES / TV"
-language: zh-CN
+description: "Gamera  is a CHINESE Private Torrent Tracker for Japanese Monster and Superhero MOVIES / TV"
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,18 +10,18 @@ links:
 
 caps:
   categorymappings:
-    - {id: 410, cat: Movies, desc: "Monster怪兽"}
-    - {id: 410, cat: TV, desc: "Monster怪兽"}
-    - {id: 411, cat: Movies, desc: "Kamen Rider假面骑士"}
-    - {id: 411, cat: TV, desc: "Kamen Rider假面骑士"}
-    - {id: 412, cat: Movies, desc: "Ultraman奥特曼"}
-    - {id: 412, cat: TV, desc: "Ultraman奥特曼"}
-    - {id: 413, cat: Movies, desc: "Team战队"}
-    - {id: 413, cat: TV, desc: "Team战队"}
-    - {id: 414, cat: Movies, desc: "Other其他特摄"}
-    - {id: 414, cat: TV, desc: "Other其他特摄"}
-    - {id: 415, cat: Movies, desc: "Musical特摄音乐"}
-    - {id: 415, cat: TV, desc: "Musical特摄音乐"}
+    - {id: 410, cat: Movies, desc: "MonsterEnglish"}
+    - {id: 410, cat: TV, desc: "MonsterEnglish"}
+    - {id: 411, cat: Movies, desc: "Kamen RiderEnglish"}
+    - {id: 411, cat: TV, desc: "Kamen RiderEnglish"}
+    - {id: 412, cat: Movies, desc: "UltramanEnglish"}
+    - {id: 412, cat: TV, desc: "UltramanEnglish"}
+    - {id: 413, cat: Movies, desc: "TeamEnglish"}
+    - {id: 413, cat: TV, desc: "TeamEnglish"}
+    - {id: 414, cat: Movies, desc: "OtherOtherEnglish"}
+    - {id: 414, cat: TV, desc: "OtherOtherEnglish"}
+    - {id: 415, cat: Movies, desc: "MusicalEnglishMusic"}
+    - {id: 415, cat: TV, desc: "MusicalEnglishMusic"}
 
   modes:
     search: [q]

@@ -16,8 +16,8 @@
   <EnableRemoteAccess>true</EnableRemoteAccess>
   <LogAllQueryTimes>false</LogAllQueryTimes>
   <EnableCaseSensitiveItemIds>true</EnableCaseSensitiveItemIds>
-  <PreferredMetadataLanguage>zh-CN</PreferredMetadataLanguage>
-  <MetadataCountryCode>CN</MetadataCountryCode>
+  <PreferredMetadataLanguage>en-US</PreferredMetadataLanguage>
+  <MetadataCountryCode>US</MetadataCountryCode>
   <SortRemoveWords>
     <string>the</string>
     <string>a</string>
@@ -33,7 +33,7 @@
   <EnableAutomaticRestart>true</EnableAutomaticRestart>
   <ServerName>ATM</ServerName>
   <PreferredDetectedRemoteAddressFamily>InterNetwork</PreferredDetectedRemoteAddressFamily>
-  <UICulture>zh-CN</UICulture>
+  <UICulture>en-US</UICulture>
   <RemoteClientBitrateLimit>0</RemoteClientBitrateLimit>
   <LocalNetworkSubnets />
   <LocalNetworkAddresses />

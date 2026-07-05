@@ -1,8 +1,8 @@
 ---
 id: haitang
 name: Haitang
-description: "海棠PT (Hǎitáng PT) is a CHINESE Private Torrent Tracker for OPERA / CROSSTALK"
-language: zh-CN
+description: "EnglishPT (Hǎitáng PT) is a CHINESE Private Torrent Tracker for OPERA / CROSSTALK"
+language: en-US
 type: private
 encoding: UTF-8
 requestDelay: 2
@@ -11,15 +11,15 @@ links:
 
 caps:
   categorymappings:
-    - {id: 1, cat: Audio, desc: "相声 Crosstalk", default: true}
-    - {id: 4091, cat: Audio, desc: "评书 Storytelling", default: true}
-    - {id: 4097, cat: Audio, desc: "戏曲 Opera", default: true}
-    - {id: 4098, cat: Audio, desc: "鼓/琴 Drum / Piano", default: true}
-    - {id: 4099, cat: Audio, desc: "小曲 Small Song", default: true}
-    - {id: 4101, cat: Audio, desc: "小品 Sketch", default: true}
-    - {id: 4104, cat: Audio, desc: "二人转 Duets", default: true}
-    - {id: 4105, cat: TV, desc: "小剧种 Puppet shows", default: true}
-    - {id: 4103, cat: Audio/Audiobook, desc: "广播剧 Audiobooks", default: false}
+    - {id: 1, cat: Audio, desc: "English Crosstalk", default: true}
+    - {id: 4091, cat: Audio, desc: "English Storytelling", default: true}
+    - {id: 4097, cat: Audio, desc: "English Opera", default: true}
+    - {id: 4098, cat: Audio, desc: "English/English Drum / Piano", default: true}
+    - {id: 4099, cat: Audio, desc: "English Small Song", default: true}
+    - {id: 4101, cat: Audio, desc: "English Sketch", default: true}
+    - {id: 4104, cat: Audio, desc: "English Duets", default: true}
+    - {id: 4105, cat: TV, desc: "English Puppet shows", default: true}
+    - {id: 4103, cat: Audio/Audiobook, desc: "English Audiobooks", default: false}
 
   modes:
     search: [q]
@@ -69,7 +69,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

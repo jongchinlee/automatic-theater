@@ -2,7 +2,7 @@
 <UserConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <AudioLanguagePreference />
   <PlayDefaultAudioTrack>true</PlayDefaultAudioTrack>
-  <SubtitleLanguagePreference>zh-CN</SubtitleLanguagePreference>
+  <SubtitleLanguagePreference>en-US</SubtitleLanguagePreference>
   <DisplayMissingEpisodes>false</DisplayMissingEpisodes>
   <SubtitleMode>Always</SubtitleMode>
   <EnableLocalPassword>false</EnableLocalPassword>

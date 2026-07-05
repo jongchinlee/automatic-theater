@@ -2,7 +2,7 @@
 id: hdfun
 name: HDFun
 description: "HDFun (HDZone) is a CHINESE Private Torrent Tracker for HD MOVIES / TV"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -117,7 +117,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: torrents.php
     selector: a[href="logout.php"]

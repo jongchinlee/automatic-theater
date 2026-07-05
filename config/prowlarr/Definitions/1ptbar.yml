@@ -2,7 +2,7 @@
 id: 1ptbar
 name: 1ptbar
 description: "1ptbar is a CHINESE Private Torrent Tracker for MOVIES / TV / E-LEARNING"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,18 +10,18 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies/电影"}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries/纪录片"}
-    - {id: 405, cat: TV/Anime, desc: "Animations/动漫"}
-    - {id: 402, cat: TV, desc: "TV Series/电视剧"}
-    - {id: 403, cat: TV, desc: "TV Shows/综艺节目"}
-    - {id: 406, cat: Audio/Video, desc: "Music Videos/音乐MV"}
-    - {id: 407, cat: TV/Sport, desc: "Sports/体育"}
-    - {id: 409, cat: Other, desc: "Misc/其他"}
-    - {id: 408, cat: Audio, desc: "HQ Audio/高品质音频"}
-    - {id: 412, cat: Other, desc: "Edu/教育"}
-    - {id: 411, cat: PC/Games, desc: "Games/游戏"}
-    - {id: 410, cat: PC/0day, desc: "Software/软件"}
+    - {id: 401, cat: Movies, desc: "Movies/Movies"}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries/Documentary"}
+    - {id: 405, cat: TV/Anime, desc: "Animations/Anime"}
+    - {id: 402, cat: TV, desc: "TV Series/TV Series"}
+    - {id: 403, cat: TV, desc: "TV Shows/TV ShowsEnglish"}
+    - {id: 406, cat: Audio/Video, desc: "Music Videos/MusicMV"}
+    - {id: 407, cat: TV/Sport, desc: "Sports/Sports"}
+    - {id: 409, cat: Other, desc: "Misc/Other"}
+    - {id: 408, cat: Audio, desc: "HQ Audio/EnglishAudio"}
+    - {id: 412, cat: Other, desc: "Edu"}
+    - {id: 411, cat: PC/Games, desc: "Games/Games"}
+    - {id: 410, cat: PC/0day, desc: "Software/Software"}
 
   modes:
     search: [q]
@@ -86,7 +86,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]

@@ -2,7 +2,7 @@
 id: hd4fans
 name: HD4FANS
 description: "HD4FANS is a CHINESE Private Torrent Tracker for HD MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -54,7 +54,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
       message:
         selector: td.text
   test:

@@ -2,7 +2,7 @@
 id: sharkpt
 name: SharkPT
 description: "SharkPT is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,15 +10,15 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies/电影"}
-    - {id: 402, cat: TV, desc: "TV Series/电视连续剧"}
-    - {id: 403, cat: TV, desc: "TV Shows/综艺"}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries/纪录片"}
-    - {id: 405, cat: TV/Anime, desc: "Animations/动漫"}
-    - {id: 406, cat: Audio/Video, desc: "MusicVideo/音乐视频"}
-    - {id: 407, cat: TV/Sport, desc: "Sports/体育"}
+    - {id: 401, cat: Movies, desc: "Movies/Movies"}
+    - {id: 402, cat: TV, desc: "TV Series/EnglishTV Series"}
+    - {id: 403, cat: TV, desc: "TV Shows/TV Shows"}
+    - {id: 404, cat: TV/Documentary, desc: "Documentaries/Documentary"}
+    - {id: 405, cat: TV/Anime, desc: "Animations/Anime"}
+    - {id: 406, cat: Audio/Video, desc: "MusicVideo/MusicEnglish"}
+    - {id: 407, cat: TV/Sport, desc: "Sports/Sports"}
     - {id: 408, cat: Audio, desc: "Music/HQ Audio"}
-    - {id: 409, cat: Other, desc: "Misc/其他"}
+    - {id: 409, cat: Other, desc: "Misc/Other"}
 
   modes:
     search: [q]
@@ -83,7 +83,7 @@ login:
     ssl: yes
     trackerssl: yes
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: shark-icon-button[onclick*="logout.php"]

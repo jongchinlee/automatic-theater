@@ -10,10 +10,10 @@ links:
 
 caps:
   categorymappings:
-    - {id: 1, cat: Movies, desc: "电影"}
-    - {id: 2, cat: TV, desc: "剧集"}
-    - {id: 3, cat: Audio, desc: "音乐"}
-    - {id: 4, cat: Audio/Audiobook, desc: "有声"}
+    - {id: 1, cat: Movies, desc: "Movies"}
+    - {id: 2, cat: TV, desc: "TV Series"}
+    - {id: 3, cat: Audio, desc: "Music"}
+    - {id: 4, cat: Audio/Audiobook, desc: "English"}
 
   modes:
     search: [q]

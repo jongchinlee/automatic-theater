@@ -1,8 +1,8 @@
 ---
 id: putao
 name: PuTao
-description: "葡萄 (PuTao) is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
-language: zh-CN
+description: "English (PuTao) is a CHINESE Private Torrent Tracker for MOVIES / TV / GENERAL"
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,33 +10,33 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies CHN 华语电影"}
-    - {id: 402, cat: Movies, desc: "Movies Eng 欧美电影"}
-    - {id: 403, cat: Movies, desc: "Movies Asian 亚洲电影"}
-    - {id: 406, cat: TV/Documentary, desc: "Documentary 纪录片"}
-    - {id: 407, cat: TV, desc: "TV Series HKTW 港台电视剧"}
-    - {id: 408, cat: TV, desc: "TV Series Asian 亚洲电视剧"}
-    - {id: 409, cat: TV, desc: "TV Series CHN 大陆电视剧"}
-    - {id: 410, cat: TV, desc: "TV Series Eng 欧美电视剧"}
-    - {id: 411, cat: TV, desc: "TV CHN 大陆综艺节目"}
-    - {id: 412, cat: TV, desc: "TV HKTW 港台综艺节目"}
-    - {id: 413, cat: TV, desc: "TV Eng 欧美综艺节目"}
-    - {id: 414, cat: TV, desc: "TV JPKR 日韩综艺节目"}
-    - {id: 420, cat: Audio, desc: "Music CHN 华语音乐"}
-    - {id: 421, cat: Audio, desc: "Music JPKR 日韩音乐"}
-    - {id: 422, cat: Audio, desc: "Music Eng 欧美音乐"}
-    - {id: 423, cat: Audio, desc: "Music OST 原声音乐"}
-    - {id: 425, cat: Audio, desc: "Music Classic 古典音乐"}
-    - {id: 426, cat: Audio/MP3, desc: "Music mp3合辑"}
+    - {id: 401, cat: Movies, desc: "Movies CHN MandarinMovies"}
+    - {id: 402, cat: Movies, desc: "Movies Eng WesternMovies"}
+    - {id: 403, cat: Movies, desc: "Movies Asian EnglishMovies"}
+    - {id: 406, cat: TV/Documentary, desc: "Documentary Documentary"}
+    - {id: 407, cat: TV, desc: "TV Series HKTW EnglishTV Series"}
+    - {id: 408, cat: TV, desc: "TV Series Asian EnglishTV Series"}
+    - {id: 409, cat: TV, desc: "TV Series CHN EnglishTV Series"}
+    - {id: 410, cat: TV, desc: "TV Series Eng WesternTV Series"}
+    - {id: 411, cat: TV, desc: "TV CHN EnglishTV ShowsEnglish"}
+    - {id: 412, cat: TV, desc: "TV HKTW EnglishTV ShowsEnglish"}
+    - {id: 413, cat: TV, desc: "TV Eng WesternTV ShowsEnglish"}
+    - {id: 414, cat: TV, desc: "TV JPKR EnglishTV ShowsEnglish"}
+    - {id: 420, cat: Audio, desc: "Music CHN MandarinMusic"}
+    - {id: 421, cat: Audio, desc: "Music JPKR EnglishMusic"}
+    - {id: 422, cat: Audio, desc: "Music Eng WesternMusic"}
+    - {id: 423, cat: Audio, desc: "Music OST EnglishMusic"}
+    - {id: 425, cat: Audio, desc: "Music Classic EnglishMusic"}
+    - {id: 426, cat: Audio/MP3, desc: "Music mp3English"}
     - {id: 427, cat: Audio/Video, desc: "Music Videos"}
-    - {id: 429, cat: Console, desc: "Games 游戏"}
-    - {id: 431, cat: TV/Anime, desc: "Anime 动漫"}
-    - {id: 432, cat: TV/Sport, desc: "Sport 体育"}
-    - {id: 434, cat: PC, desc: "Software 软件"}
-    - {id: 435, cat: Other, desc: "Study 学习"}
+    - {id: 429, cat: Console, desc: "Games Games"}
+    - {id: 431, cat: TV/Anime, desc: "Anime Anime"}
+    - {id: 432, cat: TV/Sport, desc: "Sport Sports"}
+    - {id: 434, cat: PC, desc: "Software Software"}
+    - {id: 435, cat: Other, desc: "Study Learning"}
     - {id: 440, cat: PC/Mac, desc: "Software Mac"}
-    - {id: 451, cat: Other, desc: "Campus 校园原创"}
-    - {id: 450, cat: Other/Misc, desc: "Misc 其他"}
+    - {id: 451, cat: Other, desc: "Campus English"}
+    - {id: 450, cat: Other/Misc, desc: "Misc Other"}
 
   modes:
     search: [q]
@@ -74,7 +74,7 @@ settings:
   - name: info_tpp
     type: info
     label: Results Per Page
-    default: For best results, change the <b>每页种子数:每页显示</b><i>(Torrents per page:)</i> setting to <b>100</b> on your account profile.
+    default: For best results, change the <b>English:English</b><i>(Torrents per page:)</i> setting to <b>100</b> on your account profile.
 
 login:
   path: login.php
@@ -86,7 +86,7 @@ login:
     checkcode: XxXx
     logout: ""
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href^="logout.php?hash="]
@@ -138,21 +138,21 @@ search:
       attribute: href
     date_elapsed:
       # time elapsed (default)
-      # 19时<br/>3分 (19 hours 3 minutes)
-      # 2天<br/>21时 (2 days 21 hours)
+      # 19English<br/>3English (19 hours 3 minutes)
+      # 2English<br/>21English (2 days 21 hours)
       selector: td:nth-child(4):not(:contains("-"))
       optional: true
       filters:
         - name: replace
-          args: ["年", "years"]
+          args: ["English", "years"]
         - name: replace
-          args: ["月", "months"]
+          args: ["English", "months"]
         - name: replace
-          args: ["天", "days"]
+          args: ["English", "days"]
         - name: replace
-          args: ["时", " hours"]
+          args: ["English", " hours"]
         - name: replace
-          args: ["分", "minutes"]
+          args: ["English", "minutes"]
         - name: append
           args: " ago"
         - name: timeago

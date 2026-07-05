@@ -2,7 +2,7 @@
 id: tjupt
 name: TJUPT
 description: "TJUPT is a CHINESE Private Torrent Tracker for GENERAL"
-language: zh-CN
+language: en-US
 type: private
 encoding: UTF-8
 links:
@@ -10,18 +10,18 @@ links:
 
 caps:
   categorymappings:
-    - {id: 401, cat: Movies, desc: "Movies电影"}
-    - {id: 402, cat: TV, desc: "TV Series剧集"}
-    - {id: 403, cat: TV, desc: "TV Shows综艺"}
-    - {id: 404, cat: TV/Documentary, desc: "Documentaries资料"}
-    - {id: 405, cat: TV/Anime, desc: "Animations动漫"}
-    - {id: 406, cat: Audio/Video, desc: "Music Videos音乐"}
-    - {id: 407, cat: TV/Sport, desc: "Sports体育"}
-    - {id: 408, cat: PC, desc: "Software软件"}
-    - {id: 409, cat: Console, desc: "Games游戏"}
-    - {id: 411, cat: Books, desc: "Books纪录片"}
-    - {id: 412, cat: PC/Mobile-Other, desc: "Mobile移动视频"}
-    - {id: 410, cat: Other, desc: "Misc其他"}
+    - {id: 401, cat: Movies, desc: "MoviesMovies"}
+    - {id: 402, cat: TV, desc: "TV SeriesTV Series"}
+    - {id: 403, cat: TV, desc: "TV ShowsTV Shows"}
+    - {id: 404, cat: TV/Documentary, desc: "DocumentariesEnglish"}
+    - {id: 405, cat: TV/Anime, desc: "AnimationsAnime"}
+    - {id: 406, cat: Audio/Video, desc: "Music VideosMusic"}
+    - {id: 407, cat: TV/Sport, desc: "SportsSports"}
+    - {id: 408, cat: PC, desc: "SoftwareSoftware"}
+    - {id: 409, cat: Console, desc: "GamesGames"}
+    - {id: 411, cat: Books, desc: "BooksDocumentary"}
+    - {id: 412, cat: PC/Mobile-Other, desc: "MobileEnglish"}
+    - {id: 410, cat: Other, desc: "MiscOther"}
 
   modes:
     search: [q]
@@ -70,7 +70,7 @@ login:
     password: "{{ .Config.password }}"
     logout: 90days
   error:
-    - selector: td.embedded:has(h2:contains("失败"))
+    - selector: td.embedded:has(h2:contains("Failed"))
   test:
     path: index.php
     selector: a[href="logout.php"]
