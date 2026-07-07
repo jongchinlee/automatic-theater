@@ -113,6 +113,12 @@ Stop the stack:
 sudo docker compose down
 ```
 
+Uninstall and delete generated config/media:
+
+```bash
+./uninstall.sh
+```
+
 ## Migration
 
 To migrate, copy the repository directory, review `docker-compose-default.env`, run `./install.sh`, then start with Docker Compose. By default media lives inside the repository at `./media/video`.

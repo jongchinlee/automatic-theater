@@ -40,6 +40,8 @@ bad_images=$(awk '/image:/{print $2}' "$compose" | grep -v ':latest$' || true)
 [ -z "$bad_images" ] || { printf 'non-latest images:\n%s\n' "$bad_images"; exit 1; }
 
 bash -n install.sh
+bash -n uninstall.sh
+grep -F -q 'Type DELETE to continue' uninstall.sh
 
 if awk '/^```mermaid$/{inside=1; next} /^```$/{inside=0} inside && /== .* ==>/ {found=1} END{exit found ? 0 : 1}' README.md; then
   echo 'invalid Mermaid edge label syntax in README.md'
