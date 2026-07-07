@@ -2,6 +2,7 @@ logs
 *.log
 .env
 docker-compose.yml
+media/
 *.db-shm
 *.db-wal
 *.sqlite-shm

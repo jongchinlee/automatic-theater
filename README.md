@@ -34,7 +34,7 @@ flowchart LR
     JProxy -->|Proxy search| Prowlarr
     Prowlarr -->|Releases| JProxy
     SonarrRadarr -->|Download| qBittorrent
-    qBittorrent -->|Completed media| MediaFolders["/media/video"]
+    qBittorrent -->|Completed media| MediaFolders["./media/video"]
     SonarrRadarr -->|Import and rename| Emby
     Bazarr -->|Download subtitles| Emby
     Recyclarr -->|Sync quality rules| SonarrRadarr
@@ -45,8 +45,8 @@ flowchart LR
 
 - Timezone: `Asia/Singapore`
 - Docker subnet: `172.30.12.0/24`
-- Media root: `/media/video`
-- Media folders: `/media/video/movie`, `/media/video/serial`, `/media/video/anime`, `/media/video/download`
+- Media root: `./media/video`
+- Media folders: `./media/video/movie`, `./media/video/serial`, `./media/video/anime`, `./media/video/download`
 - Config root: `./config`
 - Image tags: `latest`
 - Default language: English
@@ -115,7 +115,7 @@ sudo docker compose down
 
 ## Migration
 
-To migrate, copy the repository directory and the media root to the new host, review `docker-compose-default.env`, run `./install.sh`, then start with Docker Compose.
+To migrate, copy the repository directory, review `docker-compose-default.env`, run `./install.sh`, then start with Docker Compose. By default media lives inside the repository at `./media/video`.
 
 ## Security note
 

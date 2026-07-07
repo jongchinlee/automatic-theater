@@ -17,6 +17,8 @@ grep -q 'subnet: 172.30.12.0/24' "$compose"
 reject '172\.128\.2\.' . --exclude-dir=.git --exclude=.env
 reject '192\.168\.2\.' . --exclude-dir=.git --exclude=.env
 reject 'Asia/Shanghai' README.md docker-compose-default.env docker-compose-default.yml install.sh
+grep -F -q 'MEDIA_PATH=./media/video' docker-compose-default.env
+grep -F -q 'media/' .gitignore
 reject 'docker compose pull && docker compose up -d' install.sh
 reject 'sudo docker-compose pull\|sudo docker-compose up\|sudo docker-compose down' README.md
 reject '^  portainer:' "$compose"
